@@ -1,0 +1,167 @@
+---
+---
+
+@import "{{ site.theme }}";
+.wrapper {
+width:100%;
+margin:0 auto;
+height:100%
+}
+
+section {
+ width: 70%;
+ float: left;
+ padding-bottom: 50px;
+ margin-left: 400px;
+}
+
+footer {
+    width: 30%;
+    float: left;
+    position: fixed;
+    bottom: 50px;
+}
+
+header {
+    width: 20%;
+    float: left;
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    padding: 0px;
+    left: 0px;
+    top: 0px;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    color: white;
+}
+
+@media print, screen and (max-width: 1200px) {
+section {
+ width:100%;
+ padding-bottom:50px;
+}
+footer {
+ width:100%;
+ float:bottom;
+ position: relative;
+ bottom:0px;
+}
+header {
+ width:100%;
+  position: relative;
+}
+}
+@media print, screen and (max-height: 400px) {
+section {
+ width:100%;
+ padding-bottom:50px;
+}
+footer {
+ width:100%;
+ float:bottom;
+ position: relative;
+ bottom:50px;
+}
+header {
+ width:100%;
+  position: relative;
+}
+}
+
+@import "fonts";
+body {
+  font:14px/1.5 "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", "proxima-nova","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: black;
+}
+
+a {
+ margin-left: 20px;
+ margin-top: 20px;
+}
+
+header h1 {
+  align: center;
+  background-color: rgba(0, 0, 0, .5);
+}
+header h1 a {
+  font-size: 22pt;
+  margin-left: 20%;
+}
+header div {
+  align: left;
+  background-color: rgba(0, 0, 0, .15);
+}
+
+header div a {
+  font-size: 16pt !important;
+  display: inline-block;
+  margin-top: 0px;
+  font-style: normal !important;
+  color: white !important; 
+}
+
+footer a { 
+ color: white
+}
+
+header div.menu-item:hover {
+  background-color: rgba(0, 0, 0, .25);
+}
+
+header div.main-menu-item:hover {
+  background-color: rgba(0, 0, 0, .25);
+}
+
+header div.menu-item.active {
+  background-color: rgba(0, 0, 0, .35);
+}
+header div.main-menu-item.active {
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.menu-item {
+  margin-bottom: 0px;
+}
+
+.menu-group {
+  margin-bottom: 0px;
+}
+
+header div a:hover {
+}
+
+footer a {
+  margin-left: 0px;
+}
+
+body {
+  padding: 0px
+}
+
+.menu-item {
+    padding-left: 30px;
+}
+
+.main-menu-item {
+    font-weight: bold;
+}
+
+footer p {
+    color: white;
+}
+
+small {
+ visibility: hidden
+}
+
+.view a {
+ color: white
+}

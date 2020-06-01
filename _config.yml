@@ -1,14 +1,42 @@
-title: "FEDOT"
+title: "FEDOT / Федот"
 date: 2020-05-28
 theme: jekyll-theme-minimal
 description: > # this means to ignore newlines until "baseurl:"
-  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/autoML">AutoML</a><br>
-  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/about-FEDOT">About FEDOT</a><br>
-  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/citation">Как нас процитировать</a><br><a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/how-to-embed">How to embed custom model into the FEDOT pipeline</a><br><a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/rukovodstvo">Руководство по работе с репозиторием</a><br>
-
+  <div class='menu-group'>
+    <div class='main-menu-item'><a href="/FEDOT.Docs/autolearning/main">Automated learning</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/autolearning/automl">Modern AutoML solutions</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/autolearning/composite">Composite models</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/autolearning/knowledge-enrichement">Knowledge enrichment</a></div>
+   </div>
+  <div class='menu-group'>
+    <div class='main-menu-item'><a href="/FEDOT.Docs/fedot/main">FEDOT Framework</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/fedot/how-to-install">Quick start</a></div>
+  <div class='menu-item'><a href="/FEDOT.Docs/fedot/components">Main components</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/fedot/algorithm-chain">Key algorithms</a></div>
+  </div>
+  <div class='menu-group'>
+    <div class='main-menu-item'><a href="/FEDOT.Docs/real_cases/main">Real-world cases</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/real_cases/credit-scoring">Credit scoring</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/real_cases/metocean-forecasting">Metocean Forecasting</a></div>
+  </div>
+   <div class='menu-group'>
+    <div class='main-menu-item'><a href="/FEDOT.Docs/utilities/main">Utilities</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/utilities/synthetic-generator">Synthetic datasets</a></div>
+   </div>
+  <div class='menu-group'>
+    <div class='main-menu-item'><a href="/FEDOT.Docs/contribution/main">Contribution</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/guidelines">How to extend or adopt</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/guidelines">Repository Guidelines</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/citation">How to cite</a></div>
+  </div>
+  <div class='menu-group'>
+     <div class='main-menu-item'><a href="/FEDOT.Docsabout-us">About us</a></div>
+  </div>
+    
 # social links
 twitter_username: your-twitter-handle # DO NOT include the @ character, or else the build will fail!
 github_username:  your-github-handle # DO NOT include the @ character, or else the build will fail!
 
 show_excerpts: true # set to false to remove excerpts on the homepage
+
 

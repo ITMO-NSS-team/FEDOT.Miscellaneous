@@ -1,6 +1,7 @@
-## FEDOT - фреймворк для генеративного автоматического машинного обучения, позволяющий создавать сложные композитные модели, обеспечивающие эффективное решение различных прикладных задач.
-### [Автоматическое МО](https://yashchenkoanastasia.github.io/github-pages-with-jekyll/autoML)
-### [Фреймворк FEDOT](https://yashchenkoanastasia.github.io/github-pages-with-jekyll/about-FEDOT)
-### [Как нас процитировать](https://yashchenkoanastasia.github.io/github-pages-with-jekyll/citation.md)
-### [How to embed custom model into the FEDOT pipeline](https://yashchenkoanastasia.github.io/github-pages-with-jekyll/how-to-embed.md)
-### [Руководство по работе с репозиторием](https://yashchenkoanastasia.github.io/github-pages-with-jekyll/rukovodstvo.md)
+# FEDOT
+
+### This site contains documentation for the algorithms used in the FEDOT framework: their description and usage guide (including application examples).
+
+FEDOT is a framework for generative automatic machine learning, enabling the creation of complex composite models which allow efficient solution of various applications.
+
+The project is published under [BSD 3 License](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md).
