@@ -1,0 +1,14 @@
+title: "FEDOT"
+date: 2020-05-28
+theme: jekyll-theme-minimal
+description: > # this means to ignore newlines until "baseurl:"
+  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/autoML">AutoML</a><br>
+  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/about-FEDOT">About FEDOT</a><br>
+  <a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/citation">Как нас процитировать</a><br><a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/how-to-embed">How to embed custom model into the FEDOT pipeline</a><br><a href="https://yashchenkoanastasia.github.io/github-pages-with-jekyll/rukovodstvo">Руководство по работе с репозиторием</a><br>
+
+# social links
+twitter_username: your-twitter-handle # DO NOT include the @ character, or else the build will fail!
+github_username:  your-github-handle # DO NOT include the @ character, or else the build will fail!
+
+show_excerpts: true # set to false to remove excerpts on the homepage
+
