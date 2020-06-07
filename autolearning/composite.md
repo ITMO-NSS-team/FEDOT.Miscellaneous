@@ -15,7 +15,7 @@ The model M_j can receive several data flows, so its output can be represented a
 
 The submodel of composite model can represent different scales of the target process
 
-![The structure of composite model for the multi-scale process](/autolearning/img/mm_chain.png)
+![The structure of composite model for the multi-scale process](img/mm_chain.png)
 
 
 [1] Kovalchuk, S.V., Metsker, O.G., Funkner, A.A., Kisliakovskii, I.O., Nikitin, N.O., Kalyuzhnaya, A.V., Vaganov, D.A., Bochenina, K.O., 2018.252A conceptual approach to complex model management with generalized modelling patterns and evolutionary identification. Complexity 2018

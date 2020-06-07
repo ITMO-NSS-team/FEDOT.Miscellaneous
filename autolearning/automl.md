@@ -13,7 +13,7 @@ There is a brief list of examples of existing solutions:
 * PyBrain
 
 We tried to summarize the main advantages and disadvantages of this solutions to the breif table:
-<img src="image/autoML/autoMLsolutions.PNG" alt="drawing" width="700"/>
+<img src="img/autoMLsolutions.png" alt="drawing" width="700"/>
 
 However, the modern AutoML is mostly focused on relatively simple tasks of hyperparameters optimization, input data preprocessing, selecting a single model or a set of models [1] (this approach is also referred to as the Combined Algorithm Selection and Hyperparameters optimization - CASH) since the overall learning and meta-learning process is extremely expensive.
 

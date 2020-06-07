@@ -20,11 +20,11 @@ Examples of existing solutions:
 * Hyperopt
 * PyBrain
 
-<img src="image/autoML/autoMLsolutions.PNG" alt="drawing" width="700"/>
+<img src="img/autoMLsolutions.PNG" alt="drawing" width="700"/>
 
 The relevance of the AutoML is very significant these days:
 
-<img src="image/autoML/autoMLrelevance.png" alt="drawing" width="700"/>
+<img src="img/autoMLrelevance.png" alt="drawing" width="700"/>
 
 ## What is generative machine learning?
 Generative AutoML solves the problems of growing new data-driven models, new chains, ensembles or other compositions from already existing models, etc. These days, ideas of low-level "assembly" of the model for custom problem setting are implemented only in the context of NAS (Neural Architecture Search) direction and mainly for problems of pattern recognition. However, for all other classes of tasks and models (the application of which may be more effective than neural networks), these approaches are not implemented.

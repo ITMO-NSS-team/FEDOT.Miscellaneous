@@ -1,7 +1,7 @@
 ## Knowledge-enrichment in the automatic learning
 
 There are various approaches to automatic learning exists:
-![The different approaches to AutoML](autolearning/img/ke.png)
+![The different approaches to AutoML](img/ke.png)
 
 Today, the ML-based solutions often lose to solutions based on domain-specific models. For example, a lot of physics-based problems can be solved more efficiently with equation-based models: both data-driven and domain-specific numerical models. Also, the simulation quality can be increased using the hybrid approach [1]
 
