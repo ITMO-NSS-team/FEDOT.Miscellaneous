@@ -3,7 +3,8 @@
 Composite model is a heterogeneous model that consists of several heterogeneous models [1]. The structure of the composite model usually can be represented as a oriented acyclic graph (DAG).
 A special case of this structure is an ensemble of models (can be single or multi-level).
 
-![The modelling task solution with composite model](img/problem-description.png)
+The modelling task solution with composite model:
+<img src="img/problem-description.png" width="600"/>
 
 ## Formalisation
 
@@ -14,9 +15,9 @@ The model M_j can receive several data flows, so its output can be represented a
 
 ## Multi-scale models
 
-The submodel of composite model can represent different scales of the target process
-
-![The structure of composite model for the multi-scale process](img/mm_chain.png)
+The submodel of composite model can represent different scales of the target process. 
+The structure of composite model for the multi-scale process:
+<img src="img/mm_chain.png" width="600"/>
 
 
 [1] Kovalchuk, S.V., Metsker, O.G., Funkner, A.A., Kisliakovskii, I.O., Nikitin, N.O., Kalyuzhnaya, A.V., Vaganov, D.A., Bochenina, K.O., 2018.252A conceptual approach to complex model management with generalized modelling patterns and evolutionary identification. Complexity 2018
