@@ -1,9 +1,11 @@
 # Fedot
 
-This site contains documentation for the Fedot framework, its description, tutorials, and application examples.
+This site contains documentation for the [Fedot framework](https://github.com/nccr-itmo/FEDOT), its description, tutorials, and application examples.
 
 Fedot is a framework for generative automatic machine learning, enabling the creation of complex composite models that allow the efficient solution of various applications.
 
 The main aim of the Fedot - to improve the quality of analysis of various natural, technical, and social processes by the automated identification of the composite models from available data sets.
+
+The main repository is available in https://github.com/nccr-itmo/FEDOT.
 
 The project is published under [BSD 3 License](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md).

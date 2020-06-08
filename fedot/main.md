@@ -22,4 +22,4 @@ Alienated composite models (model chains) for solving specific domain problems (
 * Reuse of created models by the user or other users;
  
 ## Data and execution flow
-<img src="fedot/img/flow.png" alt="drawing" width="700"/>
+<img src="img/img-components/flow.png" alt="drawing" width="700"/>
