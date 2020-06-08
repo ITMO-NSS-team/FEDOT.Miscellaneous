@@ -6,6 +6,8 @@ Fedot is a framework for generative automatic machine learning, enabling the cre
 
 The main aim of the Fedot - to improve the quality of analysis of various natural, technical, and social processes by the automated identification of the composite models from available data sets.
 
+<img src="img/idea.png" width="600"/>
+
 The main repository is available in https://github.com/nccr-itmo/FEDOT.
 
 The project is published under [BSD 3 License](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md).
