@@ -5,7 +5,7 @@ To separate the metocean process into several scales, an iterative approach can 
 The advantage of this approach can be considered to be the extraction of the trend and seasonal component without a priori assumptions about their shape. However, the same feature can be understood as a disadvantage, meaning the resulting components are less interpretable because a neural network is used.
 As an example of the metocean forecasting task, the time series of the surface height at the point obtained from the modelling results of the NEMO model for the Arctic region was taken. An LSTM model was used to predict values at the next point in time. Its architecture is shown below.
 
-<img src="img_metocean/LSTM-architecture.png" alt="drawing" width="700"/>
+<img src="img_metocean/LSTM-architecture.png" alt="drawing" width="400"/>
 
 A lag window equal to 12 hours was chosen for the experiment. Thus, using values in the previous 12 hours to train the neural network, we try to predict what will happen at the next point in time.
 At the initial block of the model, Conv1d layers can be used to find patterns in a time series (such as curvature). An adding noise layer from the normal distribution to the input data was also added - this technique helps to avoid over-learning of the model. The last TimeDistributed layer converts the resulting features from the previous layers to the output value. Inside it, a Dropout layer is used - which also helps avoid over-learning.
