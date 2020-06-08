@@ -1,6 +1,6 @@
-## FEDOT Framework installation guide
+## FEDOT Framework quick start guide
 
-## How to install FEDOT Framework to your system:
+## How to install Fedot to your system:
 
 * **Step 1**. *Download FEDOT Framework*.
   * First of all, you need to copy or 'download' FEDOT Framework to your personal computer. You can do it directly using the button          'clone or download' (red square) or you can install 'Jetbrains toolbox' and using the "clone in Pycharm" button (blue square), 
@@ -11,7 +11,7 @@
   * Next, you need to create virtual enviroment in your Pycharm project. To do this, go through the following chain: 
     *'File-Settings-Project Interprenter-Add new'*. 
   * For more details, see a picture below.
-    * ![Step 2](img/img-tutorial/2_step.PNG)
+    * ![Step 2](img/img-tutorial/2_step.png)
   * After you have created a virtual environment, you should install the libraries necessary for the FEDOT framework to work. 
     In order to do this, go to the terminal console (blue square) and run the following command *pip install -r requirements.txt* 
     (red square). 
@@ -24,3 +24,15 @@
     * Add the graphviz bin folder to the PATH (blue square) system environment variable (Example: "C:\Graphviz2.38\bin") (red square) 
   * For more details, see a picture below.
     * ![Step 4](img/img-tutorial/4_step.png)
+    
+ ## How to create your own composite model:
+ 
+* **Step 2**. Specify problem type and choose dataset.
+* **Step 2**. Create *Chain* instance.
+* **Step 3**. Create nodes with desired models.
+* **Step 4**. Add them to the chain.
+* **Step 5**. Fit the chain using *fit* method.
+* **Step 6**. Obtain the prediction using *predict* method.
+
+
+

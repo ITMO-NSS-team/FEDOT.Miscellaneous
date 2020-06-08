@@ -20,7 +20,7 @@ Not now, but this we will publish the Fedot package ASAP.
 
 We provide a constant extension of Fedot's feature set. 
 However, any Pull Requests and issues from external contributors that introduce or suggests the new features will be appreciated.
-You can create your [pull request](https://github.com/nccr-itmo/FEDOT/pulls) or [issue]((https://github.com/nccr-itmo/FEDOT/issues)) in the main repository of Fedot. 
+You can create your [pull request](https://github.com/nccr-itmo/FEDOT/pulls) or [issue](https://github.com/nccr-itmo/FEDOT/issues) in the main repository of Fedot. 
 
 ## Can I use Fedot in my project/research/etc?
 
