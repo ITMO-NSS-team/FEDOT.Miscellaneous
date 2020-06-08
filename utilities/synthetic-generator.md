@@ -1,7 +1,7 @@
 ## The utility for generation of synthetic benchmarks
 
 As a part of FEDOT framework, we provide a simple API for the generation of 
-ready-to-use synthetic chains, datasets and benchmarks. 
+ready-to-use synthetic chains, datasets, and benchmarks. 
 
 Check ```utilities/synthetic``` package for details.  
 
@@ -19,24 +19,20 @@ Example of usages can be seen in ```examples/data_generator_example``` and
 ### Chain generation
 
 ```utilities/synthetic/chain.py``` contains several functions to generate random
-chains with parameters, such as tree depth, the amount of nodes per level, and model types
- to be encapsulated in the nodes.
+chains with parameters, such as tree depth, the number of nodes per level, and model types to be encapsulated in the nodes.
  - ```chain_with_fixed_structure``` - generates chain with a fixed structure of nodes and links
   (_not implemented yet_).
- - ```chain_with_random_links``` - generates chain with a fixed structure of nodes but random links.
- - ```chain_full_random``` - generates chain with random amount of nodes and links.
- - ```chain_balanced_tree``` - generates chain with balanced tree-like structure.
+ - ```chain_with_random_links``` - generates a chain with a fixed structure of nodes but random links.
+ - ```chain_full_random``` - generates a chain with a random amount of nodes and links.
+ - ```chain_balanced_tree``` - generates a chain with a balanced tree-like structure.
   The average arity value of the resulted tree is close to 2.
 
 Example of usages can be seen in ```test/test_synthetic_chain.py```
 
 ### Synthetic benchmarks
 
-In order to test the performance, robustness, etc. of the composing algorithms, 
-various benchmark datasets can be useful. This is an ongoing research conducting by our team.
+In order to test the performance, robustness, etc. of the composing algorithms, various benchmark datasets can be useful. This is ongoing research conducting by our team.
  
-
-
 Currently, the utility provides the following benchmark generation schema:
 1. A chain with a balanced binary tree structure with a fixed value of a tree depth is generated.
 Each model in the nodes is selected randomly from a predefined set of ML models.
@@ -46,6 +42,6 @@ Each model in the nodes is selected randomly from a predefined set of ML models.
 See ```utilities/synthetic/data_benchmark.py ``` for the details and 
 ```examples/synthetic_benchmark_composing_example``` as an example of usages.  
 
-<img src="img/synth_generator.png" alt="drawing" width="612"/>
+<img src="img/synth_generator.png" alt="Synthetic data generator" width="612"/>
 
 
