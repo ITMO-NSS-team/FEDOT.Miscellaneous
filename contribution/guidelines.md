@@ -1,9 +1,9 @@
-## Repository Guidelines
+## Repository guidelines
  
-## The basic principles of the FEDOT and FEDOT.Algs repositories are as follows:
+## The basic principles of the Fedot repository are as follows:
 * Keep up to the Python code style recommended by PEP8;
 * Implement unit tests when new functionality is added;
-* Maintain API compatibility for changes in the kernel;
+* Maintain API compatibility for the changes in the kernel;
 * Enhancements to the source code should be made using pull requests;
 * Suggestions for new functionality can be made using new issues.
  

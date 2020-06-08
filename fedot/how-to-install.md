@@ -1,6 +1,6 @@
 ## FEDOT Framework installation guide
 
-# How to install FEDOT Framework to your system:
+## How to install FEDOT Framework to your system:
 
 * **Step 1**. *Download FEDOT Framework*.
   * First of all, you need to copy or 'download' FEDOT Framework to your personal computer. You can do it directly using the button          'clone or download' (red square) or you can install 'Jetbrains toolbox' and using the "clone in Pycharm" button (blue square), 

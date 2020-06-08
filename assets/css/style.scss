@@ -82,10 +82,16 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
 }
 
-a {
+header a {
  margin-left: 20px;
  margin-top: 20px;
 }
+
+footer a {
+ margin-left: 20px;
+ margin-top: 20px;
+}
+
 
 header h1 {
   align: center;
@@ -93,7 +99,7 @@ header h1 {
 }
 header h1 a {
   font-size: 22pt;
-  margin-left: 20%;
+  margin-left: 40%;
 }
 header div {
   align: left;
