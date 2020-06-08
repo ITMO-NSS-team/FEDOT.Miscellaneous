@@ -32,6 +32,9 @@ description: > # this means to ignore newlines until "baseurl:"
   <div class='menu-group'>
      <div class='main-menu-item'><a href="/FEDOT.Docs/about-us">About us</a></div>
   </div>
+  <div class='menu-group'>
+      <div class='main-menu-item'><a href="/FEDOT.Docs/FAQ">FAQ</a></div>
+   </div>
     
 # social links
 twitter_username: your-twitter-handle # DO NOT include the @ character, or else the build will fail!
