@@ -14,6 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/components">Main components</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/algorithm-chains">Key algorithms</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/models">Models</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/fedot/tutorials">Tutorials</a></div>
   </div>
   <div class='menu-group'>
     <div class='main-menu-item'><a href="/FEDOT.Docs/real_cases/main">Real-world cases</a></div>
