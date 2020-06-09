@@ -9,5 +9,7 @@ The main aim of the Fedot - to improve the quality of analysis of various natura
 <img src="img/idea.png" width="600"/>
 
 The main repository is available in https://github.com/nccr-itmo/FEDOT.
-
 The project is published under [BSD 3 License](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md) and maintained by [NSS Lab Team](https://itmo-nss-team.github.io/).
+
+The development is financially supported by National Center for Cognitive Research of ITMO University.
+https://actcognitive.org/
