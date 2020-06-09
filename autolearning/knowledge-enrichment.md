@@ -8,7 +8,7 @@ Today, the ML-based solutions often lose to solutions based on domain-specific m
 
 The integration of the domain knowledge to the ML-based solutions is a promising way to achieve a better quality of predictions, as well as the identification of data-driven models with custom structure [2].
 
-Also, the expert knowledge involvement allows improving the quality of auto-generated models [3]
+Also, the expert knowledge involvement allows improving the quality of auto-generated models [3].
 
 ## References
 
