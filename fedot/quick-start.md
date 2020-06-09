@@ -1,5 +1,49 @@
 ## FEDOT Framework quick start guide
 
+## How to create your own composite model in manual way:
+ 
+* **Step 1**. Specify problem type and choose dataset.
+```python
+task = Task(TaskTypesEnum.classification)
+dataset_to_compose = InputData.from_csv(train_file_path, task=task)
+dataset_to_validate = InputData.from_csv(test_file_path, task=task)
+```
+* **Step 2**. Create *Chain* instance, create nodes with desired models
+```python
+chain = Chain()
+node_first = NodeGenerator.primary_node(ModelTypesIdsEnum.linear)
+node_second= NodeGenerator.primary_node(ModelTypesIdsEnum.xgboost)
+node_final = NodeGenerator.secondary_node(ModelTypesIdsEnum.knn)
+chain.add_node(node_final)
+```
+* **Step 3**. Fit the chain using *fit* method.
+```python
+chain.fit(input_data=dataset_to_compose)
+```
+* **Step 4**. Obtain the prediction using *predict* method.
+```python
+prediction = chain.predict(dataset_to_validate)
+```
+
+## How to compose the chain in automated way:
+```python
+models_repo = ModelTypesRepository()
+available_model_types, _ = models_repo.search_models(
+    desired_metainfo=ModelMetaInfoTemplate(input_types=[DataTypesEnum.table],
+                                           task_type=[TaskTypesEnum.classification,
+                                                      TaskTypesEnum.clustering]))
+
+composer_requirements = GPComposerRequirements(
+        primary=available_model_types,
+        secondary=available_model_types)
+
+metric_function = MetricsRepository().metric_by_id(ClassificationMetricsEnum.ROCAUC)
+
+chain_evo_composed = composer.compose_chain(data=dataset_to_compose,
+                                            composer_requirements=composer_requirements,
+                                            metrics=metric_function)
+```
+
 ## How to install Fedot to your system:
 
 * **Step 1**. *Download FEDOT Framework*.
@@ -25,14 +69,5 @@
   * For more details, see a picture below.
     * ![Step 4](img/img-tutorial/4_step.png)
     
- ## How to create your own composite model:
- 
-* **Step 2**. Specify problem type and choose dataset.
-* **Step 2**. Create *Chain* instance.
-* **Step 3**. Create nodes with desired models.
-* **Step 4**. Add them to the chain.
-* **Step 5**. Fit the chain using *fit* method.
-* **Step 6**. Obtain the prediction using *predict* method.
-
 
 
