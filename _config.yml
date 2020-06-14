@@ -27,7 +27,8 @@ description: > # this means to ignore newlines until "baseurl:"
    </div>
   <div class='menu-group'>
     <div class='main-menu-item'><a href="/FEDOT.Docs/contribution/main">Contribution</a></div>
-    <div class='menu-item'><a href="/FEDOT.Docs/contribution/how-to-embed">How to extend or adopt</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/how-to-fedot-based">How to use and adopt</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/how-to-embed">How to extend</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/contribution/guidelines">Repository guidelines</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/contribution/citation">How to cite</a></div>
   </div>
