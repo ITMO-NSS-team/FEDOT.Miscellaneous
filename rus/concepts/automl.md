@@ -18,6 +18,7 @@
 * TPOP
 * Hyperopt
 * PyBrain
+
 <img src="img_automl/automl_conc.png" alt="drawing" width="700"/>
 
 Актуальность задач AutoML в настоящее время весьма высока:
