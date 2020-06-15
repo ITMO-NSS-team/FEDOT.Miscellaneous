@@ -60,3 +60,27 @@ $('.main-menu-item a').each(function() {
         //$(this).closest(".menu-group").children(".menu-item:not(.inselected)").hide()
     }
 });
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+if (getUrlVars()["russian"]=='1') {
+    $('menu-group').not('russian').hide();
+    $('russian').show();
+}
+else
+{
+     $('russian').hide();
+}
+
+

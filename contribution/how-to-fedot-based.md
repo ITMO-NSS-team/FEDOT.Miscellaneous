@@ -19,5 +19,6 @@ If you want to use some components of the Fedot for the non-supported problem:
 1. Create a new repository
 2. Add the Fedot as a submodule
 3. Import its classes and function to implement your functionality.
+4. Create an issue to analyze the ways of integration the described functionality into the core.
 Example: Neural Architecture Search using Fedot (see nn-structure-optimisation branch or [separate repository](https://github.com/ITMO-NSS-team/nas-fedot))
 
