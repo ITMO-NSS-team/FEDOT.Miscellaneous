@@ -74,13 +74,13 @@ function getUrlVars()
     return vars;
 }
 
-if (getUrlVars()["russian"]=='1') {
-    $('menu-group').not('russian').hide();
-    $('russian').show();
+if (getUrlVars()["rus"]=='1') {
+    $('.menu-group').not('.russian').hide();
+    $('.russian').show();
 }
 else
 {
-     $('russian').hide();
+     $('.russian').hide();
 }
 
 

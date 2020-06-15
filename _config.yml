@@ -46,7 +46,7 @@ description: > # this means to ignore newlines until "baseurl:"
       <div class='main-menu-item'><a href="/FEDOT.Docs/rus/concepts/main">Основные понятия</a></div>
       <div class='menu-item'><a href="/FEDOT.Docs/contribution/rus/concepts/automl">Автоматическое МО</a></div>
       <div class='menu-item'><a href="/FEDOT.Docs/contribution/rus/concepts/fedot">Фреймворк Федот</a></div>
-      <div class='menu-item'><a href="/FEDOT.Docs/contribution/rus/concepts/automl">Эволюционная идентификация композитных моделей</a></div>
+      <div class='menu-item'><a href="/FEDOT.Docs/contribution/rus/concepts/automl">Идентификация композитных моделей</a></div>
   </div>
   <div class='menu-group russian'>
         <div class='main-menu-item'><a href="/FEDOT.Docs/rus/real_cases/main">Прикладные примеры</a></div>
@@ -54,7 +54,7 @@ description: > # this means to ignore newlines until "baseurl:"
     </div>
   <div class='menu-group russian'>
          <div class='main-menu-item'><a href="/FEDOT.Docs/rus/contribution/main">Применение и улучшение</a></div>
-         <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/guidlines">Руководства по использованию и разработке</a></div>
+         <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/guidlines">Руководство разработчика</a></div>
          <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/guidlines">Руководство по работе с репозиториев</a></div>
          <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/guidlines">Как нас процитировать</a></div>
     </div>

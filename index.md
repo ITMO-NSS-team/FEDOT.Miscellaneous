@@ -1,5 +1,5 @@
 # Fedot
-<div class="intro-eng">
+<div class="intro-eng" markdown="1">
 This site contains documentation for the [Fedot framework](https://github.com/nccr-itmo/FEDOT), its description, tutorials, and application examples.
 
 Fedot is a framework for knowledge-enriched automated machine learning, aimed to create the complex composite models that allow the efficient solution of various applied problems.
@@ -16,7 +16,7 @@ The development is financially supported by National Center for Cognitive Resear
 https://actcognitive.org/
 </div>
 
-<div class="intro-rus russian">
+<div class="intro-rus russian" markdown="1">
 Этот сайт содержит документацию к [фреймоворку Федот](https://github.com/nccr-itmo/FEDOT): его описание, руководства, примеры применения.
 
 Федот - фреймворк для обогащенного знаниями автоматического обучения, позволяющий создавать сложные композитные модели для решения прикладных задач.
