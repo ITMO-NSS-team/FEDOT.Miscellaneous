@@ -30,5 +30,5 @@ The development is financially supported by [National Center for Cognitive Resea
 
 Разработку проекта выполняет научная группа [лаборатории моделирования природных и социальных систем](https://itmo-nss-team.github.io/).
 
-Проект финанансово поддерживается [Национальным Центром Когнитивных Разработок](https://actcognitive.org/) Университета ИТМО/
+Проект финанансово поддерживается [Национальным Центром Когнитивных Разработок](https://actcognitive.org/) Университета ИТМО.
 </div>
