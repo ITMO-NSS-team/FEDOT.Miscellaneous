@@ -59,3 +59,7 @@ node_final = NodeGenerator.secondary_node(ModelTypesIdsEnum.additive_data_model,
 chain.add_node(node_final)
 ```
 To obtain a forecast, the chain_lstm.predict(dataset_to_validate) should be called.
+
+The forecasts with different depth are differs as:
+
+<img src="img_metocean/forecast-lstm.gif" alt="drawing" width="500"/>
