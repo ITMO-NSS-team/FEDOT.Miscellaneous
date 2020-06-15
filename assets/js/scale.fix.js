@@ -77,6 +77,7 @@ function getUrlVars()
 if (getUrlVars()["rus"]=='1') {
     $('.menu-group').not('.russian').hide();
     $('.russian').show();
+    $('.intro-eng').hide()
 }
 else
 {
