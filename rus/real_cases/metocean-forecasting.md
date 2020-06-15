@@ -4,7 +4,7 @@
 
 Для примера были взят временной ряд высоты волнения в точке, полученный в результате моделирования Арктического региона с помощью модели NEMO. Для предсказания значений в следующий момент времени была использована LSTM модель. Её архитектура показана на рис. 1. 
 
-<img src="img_metocean/LSTM-architecture.png" alt="drawing" width="400"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/LSTM-architecture.png" alt="drawing" width="400"/>
 Рисунок 1 – Архитектура нейронной сети. 
 
 Для эксперимента было выбрано окно равное размеру 12 часов. Таким образом, для обучения нейронной сети использовались значения в предыдущие 12 часов мы пытаемся предсказывать то, что будет в следующий момент времени.  
@@ -15,17 +15,17 @@
 
 В качестве примера показаны два масштаба разложения. Первый из них – трендовая составляющая. Пример выделенного тренда показан на рис. 2 и рис. 3.  
 
-<img src="img_metocean/trend-component-example.png" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/trend-component-example.png" alt="drawing" width="700"/>
 
 Рисунок 2 – Слева: выделенная трендовая компонента (оранжевый) на фоне оригинального временного ряда (полный набор данных); справа: разность выделенного тренда и исходного временного ряда – сезонная компонента. 
 
- <img src="img_metocean/seasonal-component-example.png" alt="drawing" width="700"/>
+ <img src="/FEDOT.Docs/real_cases/img_metocean/seasonal-component-example.png" alt="drawing" width="700"/>
  
 Рисунок 3 – Слева: выделенная трендовая компонента (оранжевый) на фоне оригинального временного ряда (часть набора данных); справа: разность выделенного тренда и исходного временного ряда – сезонная компонента. 
 
 После обучения модель тренда была протестирована на валидационной выборке. Вся валидационная выборка, предсказания и их разница – сезонная компонента показана на рис. 4. 
 
-<img src="img_metocean/trend-model1.png" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/trend-model1.png" alt="drawing" width="700"/>
 
 Рисунок 4 – Сверху вниз: полученная модель тренда, валидационная выборка и их разница. 
 
@@ -33,12 +33,12 @@
  
 Модель для сезонной компоненты была получена аналогично. Результаты предсказания на валидационной выборке показаны на рис. 5 и рис. 6. 
 
-<img src="img_metocean/validation-residuals-prediction1.png" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/validation-residuals-prediction1.png" alt="drawing" width="700"/>
 
 Рисунок 5 - Результат предсказания модели сезонной компоненты (оранжевый) на валидационной выборке целиком (синий). 
 
  
-<img src="img_metocean/validation-residuals-prediction2.png" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/validation-residuals-prediction2.png" alt="drawing" width="700"/>
 
 Рисунок 6 - Результат предсказания модели сезонной компоненты (оранжевый) на части валидационной выборки (синий). 
 
@@ -47,8 +47,8 @@
 Итоговая модель сезонной компоненты имеет среднеквадратичную ошибку равную 0.03 м на валидационной выборке. 
 
 Реализация данной модели во фреймворке Федот:
-<img src="img_metocean/fedot-implementation.png" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/fedot-implementation.png" alt="drawing" width="700"/>
 
 Прогнозы, выполненные с различной заблаговременностью:
 
-<img src="img_metocean/forecast-lstm.gif" alt="drawing" width="500"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/forecast-lstm.gif" alt="drawing" width="500"/>
