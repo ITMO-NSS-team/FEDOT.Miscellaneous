@@ -51,6 +51,7 @@ description: > # this means to ignore newlines until "baseurl:"
   <div class='menu-group russian'>
         <div class='main-menu-item'><a href="/FEDOT.Docs/rus/real_cases/main?rus=1">Прикладные примеры</a></div>
         <div class='menu-item'><a href="/FEDOT.Docs/rus/real_cases/scoring?rus=1">Кредитный скоринг</a></div>
+        <div class='menu-item'><a href="/FEDOT.Docs/rus/real_cases/metocean-forecasting?rus=1">Гидромет. прогнозирование</a></div>
     </div>
   <div class='menu-group russian'>
          <div class='main-menu-item'><a href="/FEDOT.Docs/rus/contribution/main?rus=1">Применение и улучшение</a></div>

@@ -2,7 +2,7 @@
 
 We decided to prepare a set of real-world cases, that can be solved if effective way using FEDOT.
 
-The [first case](/FEDOT.Docs/real_cases/credit-scoring) is the credit scoring problem (classification task). The task is to predict the default event for the bank customer according to the history of transactions.
+The [first case](/FEDOT.Docs/real_cases/credit-scoring) is the credit scoring problem (classification task). The task is to predict the default event for the bank customer according to the application data.
 The dataset is obtained from the [Kaggle competition](https://www.kaggle.com/c/GiveMeSomeCredit).  
 
 The [second case](/FEDOT.Docs/real_cases/metocean-forecasting) is the metocean forecasting problem (multi-scale random process regression task).
