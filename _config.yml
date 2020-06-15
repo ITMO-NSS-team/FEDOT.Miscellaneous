@@ -46,17 +46,17 @@ description: > # this means to ignore newlines until "baseurl:"
       <div class='main-menu-item'><a href="/FEDOT.Docs/rus/concepts/main?rus=1">Основные понятия</a></div>
       <div class='menu-item'><a href="/FEDOT.Docs/rus/concepts/automl?rus=1">Автоматическое МО</a></div>
       <div class='menu-item'><a href="/FEDOT.Docs/rus/concepts/fedot?rus=1">Фреймворк Федот</a></div>
-      <div class='menu-item'><a href="/FEDOT.Docs/rus/concepts/automl?rus=1">Идентификация композитных моделей</a></div>
+      <div class='menu-item'><a href="/FEDOT.Docs/rus/concepts/composite?rus=1">Идентификация композитных моделей</a></div>
   </div>
   <div class='menu-group russian'>
         <div class='main-menu-item'><a href="/FEDOT.Docs/rus/real_cases/main?rus=1">Прикладные примеры</a></div>
         <div class='menu-item'><a href="/FEDOT.Docs/rus/real_cases/scoring?rus=1">Кредитный скоринг</a></div>
     </div>
   <div class='menu-group russian'>
-         <div class='main-menu-item'><a href="/FEDOT.Docs/rus/main?rus=1">Применение и улучшение</a></div>
-         <div class='menu-item'><a href="/FEDOT.Docs/rus/tutorials?rus=1">Руководство разработчика</a></div>
-         <div class='menu-item'><a href="/FEDOT.Docs/rus/guidlines?rus=1">Руководство по работе с репозиторием</a></div>
-         <div class='menu-item'><a href="/FEDOT.Docs/rus/citation?rus=1">Как нас процитировать</a></div>
+         <div class='main-menu-item'><a href="/FEDOT.Docs/rus/contribution/main?rus=1">Применение и улучшение</a></div>
+         <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/tutorials?rus=1">Руководство разработчика</a></div>
+         <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/guidlines?rus=1">Руководство по работе с репозиторием</a></div>
+         <div class='menu-item'><a href="/FEDOT.Docs/rus/contribution/citation?rus=1">Как нас процитировать</a></div>
     </div>
   <div class='menu-group russian'>
        <div class='main-menu-item'><a href="/FEDOT.Docs">English version</a></div>
