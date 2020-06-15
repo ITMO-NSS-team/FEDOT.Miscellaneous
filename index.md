@@ -8,12 +8,12 @@ The main aim of the Fedot - to improve the quality of analysis of various natura
 
 <img src="img/idea.png" width="600"/>
 
-The main repository is available in https://github.com/nccr-itmo/FEDOT.
+The main repository is available in [GitHub](https://github.com/nccr-itmo/FEDOT).
 The project is open-source and published under [BSD 3 License](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md).
 It is maintained by [NSS Lab Team](https://itmo-nss-team.github.io/).
 
-The development is financially supported by National Center for Cognitive Research of ITMO University.
-https://actcognitive.org/
+The development is financially supported by [National Center for Cognitive Research](https://actcognitive.org/) of ITMO University.
+
 </div>
 
 <div class="intro-rus russian" markdown="1">
@@ -22,12 +22,13 @@ https://actcognitive.org/
 Федот - фреймворк для обогащенного знаниями автоматического обучения, позволяющий создавать сложные композитные модели для решения прикладных задач.
 
 Главная цель, для которой мы создаём Федот - повысить качество и автоматизированность решения задач моделирования в различных предметных областятх.
+
 <img src="img/idea.png" width="600"/>
 
-Основной репозиторий проекта доступен по ссылке https://github.com/nccr-itmo/FEDOT.
+Основной репозиторий проекта доступен на [GitHub](https://github.com/nccr-itmo/FEDOT).
 Проект имеет открытый код и распространяется по лицензии [BSD 3](https://github.com/nccr-itmo/FEDOT/blob/master/LICENSE.md).
+
 Разработку проекта выполняет научная группа [лаборатории моделирования природных и социальных систем](https://itmo-nss-team.github.io/).
 
-Проект финанансово поддерживается Национальным Центром Когнитивных Разработок Университета ИТМО.
-https://actcognitive.org/
+Проект финанансово поддерживается [Национальным Центром Когнитивных Разработок](https://actcognitive.org/) Университета ИТМО/
 </div>
