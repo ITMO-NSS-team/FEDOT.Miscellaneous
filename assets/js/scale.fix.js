@@ -41,8 +41,8 @@ $('.menu-item a').each(function() {
     if (activePage == linkPage) {
         $(this).closest("div").addClass("active");
         $(this).closest(".menu-group").addClass("active");
-        $(this).closest(".menu-group").children(".menu-item").show()
-        $(this).closest(".menu-group").children(".menu-item").addClass('inselected')
+        $(this).closest(".menu-group").children(".menu-item").show();
+        $(this).closest(".menu-group").children(".menu-item").addClass('inselected');
     } else {
         //$(this).closest(".menu-group").children(".menu-item:not(.inselected)").hide()
     }
@@ -54,8 +54,8 @@ $('.main-menu-item a').each(function() {
     if (activePage == linkPage) {
         $(this).closest("div").addClass("active");
         $(this).closest(".menu-group").addClass("active");
-        $(this).closest(".menu-group").children(".menu-item").show()
-        $(this).closest(".menu-group").children(".menu-item").addClass('inselected')
+        $(this).closest(".menu-group").children(".menu-item").show();
+        $(this).closest(".menu-group").children(".menu-item").addClass('inselected');
     } else {
         //$(this).closest(".menu-group").children(".menu-item:not(.inselected)").hide()
     }
@@ -77,7 +77,7 @@ function getUrlVars()
 if (getUrlVars()["rus"]=='1') {
     $('.menu-group').not('.russian').hide();
     $('.russian').show();
-    $('.intro-eng').hide()
+    $('.intro-eng').hide();
 }
 else
 {
