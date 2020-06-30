@@ -55,4 +55,4 @@
 
 Пример оптимизации прогностической модели:
 
-<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="700"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="1280"/>
