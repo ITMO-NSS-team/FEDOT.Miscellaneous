@@ -52,3 +52,7 @@
 Прогнозы, выполненные с различной заблаговременностью:
 
 <img src="/FEDOT.Docs/real_cases/img_metocean/forecast-lstm.gif" alt="drawing" width="500"/>
+
+Пример оптимизации прогностической модели:
+
+<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="700"/>
