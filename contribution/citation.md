@@ -1,5 +1,17 @@
 # How to cite us
- 
+
+If you use Fedot in your studies, please cite one of the papers from the list:
+
+* Kaluzhnaya A.V., Nikitin N.O., Vychuzhanin P., Hvatov A., Boukhanovsky A. Automatic Evolutionary Learning of Composite Models With Knowledge Enrichment // GECCO 2020 - Proceedings of the Genetic and Evolutionary Computation Conference Companion - 2020, pp. 1-2 
+
+* Nikitin N.O., Polonskaia I.S., Vychuzhanin P., Barabanova I.V., Kaluzhnaya A.V. Structural Evolutionary Learning for Composite Classification Models // Procedia Computer Science - 2020, pp. 1-10   
+
+Also, it will be nice to add this text in acknowledgments in possible:
+
+*The research is carried out using the Fedot Framework (https://github.com/nccr-itmo/FEDOT) supported by National Center for Cognitive Technologies.*
+
+The "stars" for the https://github.com/nccr-itmo/FEDOT repository are also welcomed.
+
 ## Links to our scientific publications, which are based on algorithms and application examples located in this repository:
 
 * Maslyaev M., Hvatov A., Kalyuzhnaya A. [Data-Driven Partial Derivative Equations Discovery with Evolutionary Approach](https://www.researchgate.net/publication/333664933_Data-Driven_Partial_Derivative_Equations_Discovery_with_Evolutionary_Approach) //International Conference on Computational Science. – Springer, Cham, 2019. – С. 635-641.
