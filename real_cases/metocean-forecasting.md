@@ -66,4 +66,4 @@ The forecasts with different depth are differs as:
 
 The example of the optimisation for the predictive chain:
 
-<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="1280"/>
+<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="1000"/>
