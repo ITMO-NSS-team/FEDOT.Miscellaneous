@@ -13,8 +13,7 @@ First of all, you need to ‘register’ your model type in a .json repository p
   "lda": {
     "meta": "sklearn_class",
     "tags": ["discriminant", "linear"]
-},
-    . . .
+}
 ```
 Most of the tags are used for composite models with the defined features, e.g. to compose model from interpretable models only use tag ‘interpretable’.
 Some of the tags are used for setting a certain rule like:
@@ -41,7 +40,7 @@ Find the appropriate strategy or create the custom one following the certain str
 Hint! Check for all Enum-style types needed to create metadata at core.repository.
 After choosing or creating the metadata block take into account the “strategy” field containing the location and name of the evaluation strategy. 
 
-Before filling in this field you need to know that every model in Fedot has quite a familiar interface with /fit/ and /predict/ methods. Any model uses what is called a ‘strategy pattern’ for the model evaluation. In other words, it has _eval_strategy parameter defined by the model type (passed to the Model class constructor) and the task type. Check for it at core/models/model.py
+Before filling in this field you need to know that every model in Fedot has quite a familiar interface with fit and predict methods. Any model uses what is called a ‘strategy pattern’ for the model evaluation. In other words, it has _eval_strategy parameter defined by the model type (passed to the Model class constructor) and the task type. Check for it at core/models/model.py
 ```python
 self._eval_strategy = _eval_strategy_for_task(self.model_type, task.task_type)
 ```
@@ -49,10 +48,10 @@ self._eval_strategy = _eval_strategy_for_task(self.model_type, task.task_type)
 From that point, you need to define an evaluation strategy for your case in core/models/evaluation directory. 
 Follow these steps to succeed:
 
-
 1. Make a script file where the custom model implementation and its evaluation strategy will be located.
 2. Implement your model and strategy in the created file. If the ‘model’ you have implemented is not a class with fit/predict methods, see the realisation of /StatsModelsAutoRegressionStrategy/ uses kind of functional programming. 
 3. Make a class with CustomNameTaskNameStrategy and *inherit* it from /EvaluationStrategy/. Here is an example of how /SkLearnEvaluationStrategy/ is defined:
+
 ```python
 import from core.models.evaluation.evaluation import EvaluationStrategy
 
@@ -85,6 +84,7 @@ class SkLearnClassificationStrategy(SkLearnEvaluationStrategy):
 
 ! Notice that the sklearn prediction strategy is defined separately since the classification and regression prediction has some differences. If your strategy satisfies the skalern strategy requirements, you can just add its type to __model_by_types as shown above like in any of the implemented strategies. 
 Take a look how it works in case of functional types of /fit///predict/ in core.models.evaluation.stats_models_eval:
+
 ```python
 from core.models.evaluation.evaluation import EvaluationStrategy
 
