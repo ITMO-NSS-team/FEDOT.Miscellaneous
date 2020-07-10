@@ -1,53 +1,69 @@
 ## How to embed custom model into the Fedot pipeline
 
-Fedot operates with a lot of self-defined types of models, tasks and some more have been realised by the means of enum Python module. Fedot uses **model types** described by enumerations to operate with integrated models. Here are some simple steps to extend Fedot with a custom model.
+FEDOT operates with a lot of self-defined types of models, tasks and some more been realised by the means of enum Python module and simple string definition. It uses model types described by JSON format. Here are some simple steps to extend FEDOT with a custom model.
 
-First of all, you need to 'register' your model type in a repository placed at core/repository/model_types_repository.py by adding a line with a model name in *ModelTypesIdsEnum* class as follows:
+First of all, you need to ‘register’ your model type in a .json repository placed at core/repository/data. This repository has two sections: “metadata” and “model”. Place the block with the custom model name and “meta”&”tag” in “model” section as follows:
 
 ```python
-class ModelTypesIdsEnum(Enum):
-    xgboost = 'xgboost',
-    knn = 'knn',
-    logit = 'logit',
+"models": {
+  "logit": {
+    "meta": "sklearn_class",
+    "tags": ["simple", "linear", "interpretable"]
+},
+  "lda": {
+    "meta": "sklearn_class",
+    "tags": ["discriminant", "linear"]
+},
     . . .
 ```
-At the same script file add your model type to the corresponding model group of *ModelTypesRepository* _initialise_tree method. For example, if your model can solve the classification task, add the model type to the corresponding model group initialisation or initialise your own (with is_initial=False, is_secondary=False):
+Most of the tags are used for composite models with the defined features, e.g. to compose model from interpretable models only use tag ‘interpretable’.
+Some of the tags are used for setting a certain rule like:
+- ‘without_preprocessing’ means to use the model without preprocessing,
+- ‘data_model’ for pseudo-models, used for nodes properties but not the modelling itself, 
+- ‘expensive’ ones do not participate in composition, so you need to request them directly
+end etc.
 
+Think about what kind of problem this custom model solves, investigate the “metadata” section and choose the appropriate strategy to put it in the “meta” section of the new custom model. 
+Find the appropriate strategy or create the custom one following the certain structure:
 ```python
-self._initialise_models_group(models=[ModelTypesIdsEnum.rf,
-                                      ModelTypesIdsEnum.dt,
-                                      ModelTypesIdsEnum.mlp,
-                                      ModelTypesIdsEnum.lda,
-                                      ModelTypesIdsEnum.qda,
-                                      ModelTypesIdsEnum.logit,
-                                      ModelTypesIdsEnum.knn,
-                                      ModelTypesIdsEnum.xgboost],
-                              task_type=[MachineLearningTasksEnum.classification],
-                              parent=ml)
-```
-! Notice the *parent* parameter values are available in *ModelGroupsIdsEnum* class. You may also check for available task types in *MachineLearningTasksEnum* class described in core/repository/task_type.py.
-
-Every model in Fedot has quite a familiar interface with *fit* and *predict* methods. Any model uses what is called a ‘strategy pattern’ for the model evaluation. In other words, it has _eval_strategy parameter defined by the model type (passed to the Model class constructor) and the task type. Check for it at core/models/model.py
-
-```python
-self._eval_strategy = _eval_strategy_for_task(self.model_type, task)
-```
-From that point, you need to define an evaluation strategy for your case in core/models/evaluation/evaluation.py. Follow these steps to succeed:
-
-1. Import the model you want to use. For example:
-
-```python
-from sklearn.linear_model import LogisticRegression as SklearnLogReg
+“sklearn_class”: {
+  “tasks”: “[TaskTypesEnum.classification]”,
+  “input_type”: “[DataTypesEnum.table, DataTypesEnum.table]”,
+  “output_type”: “[DataTypesEnum.table, DataTypesEnum.table]”,
+  “accepted_node_types”: [“any”],
+  “forbidden_node_types”: “[]”,
+  “strategies”: [“*core.models.evaluation.evaluation”, “SkLearnClassificationStrategy*”],
+  “tags”: [“ml”, “sklearn”],
+  “description”: “Implementations of the classification models from scikit-learn framework”
+},
 ```
 
-2. Make a class with CustomNameTaskNameStrategy and inherit it from *EvaluationStrategy*. Here is an example of how *SkLearnEvaluationStrategy* is defined:
+Hint! Check for all Enum-style types needed to create metadata at core.repository.
+After choosing or creating the metadata block take into account the “strategy” field containing the location and name of the evaluation strategy. 
 
-```python
+Before filling in this field you need to know that every model in Fedot has quite a familiar interface with /fit/ and /predict/ methods. Any model uses what is called a ‘strategy pattern’ for the model evaluation. In other words, it has _eval_strategy parameter defined by the model type (passed to the Model class constructor) and the task type. Check for it at core/models/model.py
+```
+Python
+self._eval_strategy = _eval_strategy_for_task(self.model_type, task.task_type)
+```
+ 
+From that point, you need to define an evaluation strategy for your case in core/models/evaluation directory. 
+Follow these steps to succeed:
+
+
+1. Make a script file where the custom model implementation and its evaluation strategy will be located.
+2. Implement your model and strategy in the created file. If the ‘model’ you have implemented is not a class with fit/predict methods, see the realisation of /StatsModelsAutoRegressionStrategy/ uses kind of functional programming. 
+3. Make a class with CustomNameTaskNameStrategy and *inherit* it from /EvaluationStrategy/. Here is an example of how /SkLearnEvaluationStrategy/ is defined:
+```
+Python
+import from core.models.evaluation.evaluation import EvaluationStrategy
+
+
 class SkLearnEvaluationStrategy(EvaluationStrategy):
     __model_by_types = {
-        ModelTypesIdsEnum.xgboost: XGBClassifier,
-        ModelTypesIdsEnum.logit: SklearnLogReg,
-        ModelTypesIdsEnum.knn: SklearnKNN,
+        'xgboost': XGBClassifier,
+        'xgbreg': XGBRegressor,
+        'adareg': AdaBoostRegressor,
     }
     def fit(self, train_data: InputData):
         sklearn_model = self._sklearn_model_impl()
@@ -55,8 +71,11 @@ class SkLearnEvaluationStrategy(EvaluationStrategy):
         train_data.target.ravel())
         return sklearn_model
 
+
     def predict(self, trained_model, predict_data: InputData) -> OutputData:
         raise NotImplementedError()
+
+
 
 
 class SkLearnClassificationStrategy(SkLearnEvaluationStrategy):
@@ -64,29 +83,42 @@ class SkLearnClassificationStrategy(SkLearnEvaluationStrategy):
         prediction = trained_model.predict_proba(predict_data.features)[:, 1]
         return prediction
 ```
-! Notice that the sklearn prediction strategy is defined separately since the classification and regression prediction has some differences. If your strategy satisfies the skalern strategy requirements, you can just add its type to __model_by_types as shown above.
 
-Hint: If the ‘model’ you have implemented is not a class with fit/predict methods, see the realisation of *StatsModelsAutoRegressionStrategy* uses kind of functional programming. Set aside fit_tuned method definition for that moment with raising NotImplementedError().
 
-Finish line. Some more steps to allow Fedot using your model.
-
-Once the Model gets the information of the task_type (integrated parameter into InputData) it needs to decide what strategy to use.
-
-1. Go back to core/models/model.py and add your strategy to corresponding task list in _eval_strategy_for_task function:
-strategies_for_tasks = {
-    MachineLearningTasksEnum.classification: [SkLearnClassificationStrategy, AutoMLEvaluationStrategy],
-}
-
+! Notice that the sklearn prediction strategy is defined separately since the classification and regression prediction has some differences. If your strategy satisfies the skalern strategy requirements, you can just add its type to __model_by_types as shown above like in any of the implemented strategies. 
+Take a look how it works in case of functional types of /fit///predict/ in core.models.evaluation.stats_models_eval:
 ```python
-strategies_for_tasks = {
-    MachineLearningTasksEnum.classification: [SkLearnClassificationStrategy, AutoMLEvaluationStrategy],
-}
+from core.models.evaluation.evaluation import EvaluationStrategy
+
+
+class StatsModelsForecastingStrategy(EvaluationStrategy):
+    __model_functions_by_types = {
+        'arima': (fit_arima, predict_arima),
+        'ar': (fit_ar, predict_ar)
+    }
+ 
+
+    def fit(self, train_data: InputData):
+        'custom implementation'
+        return <fitted_model_object>
+
+
+    def predict(self, trained_model, predict_data: InputData) -> OutputData:
+        return self._model_specific_predict(trained_model, predict_data)
+
+
+def fit_arima():
+    'implemenattion'
+
+
+def predict_arima():
+    'implementation'
+
 ```
 
-2. Add your model_type to the corresponding strategy list at the same place.
+Set aside fit_tuned method definition for that moment with raising NotImplementedError()
 
-```python
-models_for_strategies = {
-    SkLearnClassificationStrategy: [ModelTypesIdsEnum.xgboost, ModelTypesIdsEnum.knn, ModelTypesIdsEnum.logit]
-} 
-```
+Finish line.
+To give the Fedot an approach to evaluate your model fill in the mentioned ‘strategies’ field with the core.models.evaluation.custom_script_name and CustomNameTaskNameStrategy in the metadata block in .json repository where the model insertion has begun.
+
+Now you can use your model within FEDOT architecture.
