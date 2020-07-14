@@ -2,8 +2,7 @@
 
 If you use Fedot in your studies, please cite one of the papers from the list:
 
-* Kaluzhnaya A.V., Nikitin N.O., Vychuzhanin P., Hvatov A., Boukhanovsky A. Automatic Evolutionary Learning of Composite Models With Knowledge Enrichment // GECCO 2020 - Proceedings of the Genetic and Evolutionary Computation Conference Companion - 2020, pp. ? (in press) 
-
+* Kaluzhnaya A.V., Nikitin N.O., Vychuzhanin P., Hvatov A., Boukhanovsky A. Automatic evolutionary learning of composite models with knowledge enrichment //Proceedings of the 2020 Genetic and Evolutionary Computation Conference Companion. – 2020. – С. 43-44.
 * Nikitin N.O., Polonskaia I.S., Vychuzhanin P., Barabanova I.V., Kaluzhnaya A.V. Structural Evolutionary Learning for Composite Classification Models // Procedia Computer Science - 2020, pp. ? (in press) 
 
 Also, it will be nice to add this text in acknowledgments in possible:
