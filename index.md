@@ -2,7 +2,7 @@
 <div class="intro-eng" markdown="1">
 This site contains documentation for the [Fedot framework](https://github.com/nccr-itmo/FEDOT), its description, tutorials, and application examples.
 
-Fedot is a framework for knowledge-enriched automated machine learning, aimed to create the complex composite models that allow the efficient solution of various applied problems.
+Fedot is a framework for automated modelling and machine learning, aimed to create the complex composite models that allow the obtain the efficient solution of various applied problems.
 
 The main aim of the Fedot - to improve the quality of analysis of various natural, technical, and social processes by the automated identification of the composite models from available data sets.
 
