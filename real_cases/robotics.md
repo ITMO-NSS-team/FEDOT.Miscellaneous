@@ -57,7 +57,7 @@ model (lda), support vector clustering model (svc).
 
 Evolution convergence for some obtained chains is shown in the picture:
 
-<img src="/FEDOT.Docs/real_cases/img_robotics/robotics_evo.png" alt="drawing" width="600"/>
+<img src="img_robotics/robotics_evo.png" alt="drawing" width="600"/>
 
 As a result of multiple experiments, there is no need to set more than 100 generation for this
 specific case. 
@@ -78,7 +78,7 @@ on the much more data size. And it was interesting to create performance models 
 which were obtained during compositing. The aim was to extrapolate the performance model of each
 individual node to chain performance model which consisted of the first ones.
 
-<img src="/FEDOT.Docs/real_cases/img_robotics/rf_perf.png" alt="drawing" width="600"/>
+<img src="img_robotics/rf_perf.png" alt="drawing" width="600"/>
 
 There is and further, it was used least squared errors (LSE) algorithm to approximate origin
 points of a single model performance. As you can see, some of the original points were excluded

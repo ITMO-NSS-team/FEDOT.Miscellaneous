@@ -1,5 +1,10 @@
 ## Tutorials for Fedot
 
+### Basic tutorials (in English)
+
+The [tutorial](tutorials/tutorial__Timesries_gapfilling.pdf) on the application of the time series forecasting functionality of Fedot for the gap filling.
+
+
 ### Video tutorials (in Russian)
 
 The tutorial on the development of composite models for the simulation of the real-world processes:
