@@ -3,7 +3,7 @@ It is important that banks are able to recognize fraudulent credit card transact
 The data sets contain transactions made by European credit card holders in September 2013. This data set shows transactions that took place in two days, of which we have 492 fraudulent transactions out of 284,807. The data set is highly unbalanced, the positive class (fraud) accounts for 0.172% of all transactions.  
 The dataset contains only numeric input variables, which are the result of PCA conversion. Unfortunately, due to privacy problems we cannot be provided with the original functions and additional background information about the data. Characteristics V1, V2,... V28 are the main components obtained with PCA, the only functions that were not converted with PCA are "Time" and "Sum". The "Time" function contains the seconds elapsed between each transaction and the first transaction in the dataset. The "Class" function is an answer variable that takes 1 in case of fraud and 0 otherwise.
 
-<img src="img_economy/distr.png.png" alt="drawing" width="600"/>
+<img src="img_economy/distr.png" alt="drawing" width="600"/>
 
 The stages of creating a composite model using the FEDOT framework
 1) The first step is to transform our dataset so that the last column contains our target variable (Y). 
