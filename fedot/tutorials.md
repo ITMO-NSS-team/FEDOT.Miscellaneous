@@ -2,7 +2,7 @@
 
 ### Basic tutorials (in English)
 
-The [tutorial](tutorials/tutorial__Timesries_gapfilling.pdf) on the application of the time series forecasting functionality of Fedot for the gap filling.
+The [tutorial](../tutorials/tutorial_timeseries_gapfilling.pdf) on the application of the time series forecasting functionality of Fedot for the gap filling.
 
 
 ### Video tutorials (in Russian)
