@@ -21,6 +21,8 @@ description: > # this means to ignore newlines until "baseurl:"
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/credit-scoring">Credit scoring</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/metocean-forecasting">Metocean Forecasting</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/robotics">Robotics</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/real_cases/economics">Economics</a></div>
+
   </div>
    <div class='menu-group'>
     <div class='main-menu-item'><a href="/FEDOT.Docs/utilities/main">Utilities</a></div>
