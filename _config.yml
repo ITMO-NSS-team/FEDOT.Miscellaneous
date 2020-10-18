@@ -35,6 +35,7 @@ description: > # this means to ignore newlines until "baseurl:"
     <div class='menu-item'><a href="/FEDOT.Docs/contribution/how-to-embed">How to extend</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/contribution/guidelines">Repository guidelines</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/contribution/citation">How to cite</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/contribution/integration">Integration</a></div>
   </div>
   <div class='menu-group'>
       <div class='main-menu-item'><a href="/FEDOT.Docs/FAQ">FAQ</a></div>

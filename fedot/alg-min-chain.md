@@ -4,11 +4,14 @@ As a part of the composing algorithm, we developed a regularization operator whi
 population before the parents selection procedure to provide more sustainable behavior of the evolutionary algorithm.
 
 <img src="img/img-reg/regularization.png" alt="drawing" width="700"/>
+
 The logic of the regularization operator.
 
 
 The regularization are integrated in the common algorithm as follows:
+
 <img src="img/img-reg/code.png" alt="drawing" width="500"/>
+
 The pseudo-code of the minimal chain identification algorithm.
 
 
@@ -19,6 +22,7 @@ of additional subtrees was set equals to population size. Experiments show that 
 influence for composing algorithm and improves its convergence:
 
 <img src="img/img-reg/exps.png" alt="drawing" width="700"/>
+
 The comparison of the different operators.
 
 Also, state-of-the art [parameter-free scheme](https://www.researchgate.net/publication/338883598_An_Adaptive_and_Near_Parameter-free_Evolutionary_Computation_Approach_Towards_True_Automation_in_AutoML) is implemented as a part of algorithm 
