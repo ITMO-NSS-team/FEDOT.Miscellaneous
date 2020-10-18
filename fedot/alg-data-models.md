@@ -1,8 +1,10 @@
-##The chain with the data preprocessing models:
+## The data preprocessing in FEDOT:
 
-Transformer converts data formats, preprocesor - changes their "scale" through skaling/normalization, etc.
+The data preparation for modelling implemented in following way in FEDOT. It is separated to transforming and preprocessing.
 
-<img src="img/img-datamodel/datamodel.png" alt="drawing" width="700"/>
+Transformer converts data formats, preprocessor - changes their "scale" through scaling/normalization, etc.
+
+<img src="img/img-datamodel/datamodel.png" alt="drawing" width="300"/>
 
 More complex operations with data are located in separate models. 
 For example, data enrichment or dimensionality reduction can be done as:
@@ -48,14 +50,12 @@ The data prerocessing model for the time series:
 It can be created as follows:
 
 ```python
-chain = Chain()
-node_trend = NodeGenerator.primary_node(ModelTypesIdsEnum.trend_data_model)
-node_lstm_trend = NodeGenerator.secondary_node(ModelTypesIdsEnum.lstm, nodes_from=[node_trend])
+node_trend = Primary_node('trend_data_model')
+node_lstm_trend = Secondary_node('lstm', nodes_from=[node_trend])
 
-node_residual = NodeGenerator.primary_node(ModelTypesIdsEnum.residual_data_model)
-node_ridge_residual = NodeGenerator.secondary_node(ModelTypesIdsEnum.ridge, nodes_from=[node_residual])
+node_residual = Primary_node('residual_data_model')
+node_ridge_residual = Secondary_node('ridge', nodes_from=[node_residual])
 
-node_final = NodeGenerator.secondary_node(ModelTypesIdsEnum.additive_data_model,
-                                          nodes_from=[node_ridge_residual, node_lstm_trend])
-chain.add_node(node_final)
+node_final = Secondary_node('linear', nodes_from=[node_ridge_residual, node_lstm_trend])
+chain = Chain(node_final)
 ```

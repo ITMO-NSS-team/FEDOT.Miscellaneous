@@ -14,8 +14,9 @@ description: > # this means to ignore newlines until "baseurl:"
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/components">Main components</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/algorithm-chains">Composition algorithm</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/alg-min-chain">Chain simplification</a></div>
-  <div class='menu-item'><a href="/FEDOT.Docs/fedot/alg-data-models">Data preprocessing</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/fedot/alg-data-models">Data preprocessing</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/models">Models</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/fedot/alg-tuning">Models tuning</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/fedot/tutorials">Tutorials</a></div>
   </div>
   <div class='menu-group'>
