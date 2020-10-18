@@ -4,7 +4,6 @@
 
 The [tutorial](../tutorials/tutorial_timeseries_gapfilling.pdf) on the application of the time series forecasting functionality of Fedot for the gap filling.
 
-
 ### Video tutorials (in Russian)
 
 The tutorial on the development of composite models for the simulation of the real-world processes:
@@ -25,3 +24,9 @@ The description of the structural learning concept:
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1594040513/video_to_markdown/images/youtube--RidsbUpkNqI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=RidsbUpkNqI "The description of the structural learning concept:
 ")
+
+### ### Domain-specific tutorials (in English)
+
+The [tutorial](../tutorials/robotics_tutorial.pdf) on the application of the Fedot to solve grasp stability prediction task.
+
+The [tutorial](../tutorials/economics_tutorial.pdf) on the application of the Fedot to solve economy fraud detection task.
