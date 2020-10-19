@@ -27,6 +27,8 @@ The description of the structural learning concept:
 
 ### ### Domain-specific tutorials (in English)
 
+The [tutorial](../tutorials/tutorial_seismic.pdf) on the application of the Fedot/NAS to solve seismic analyzis task.
+
 The [tutorial](../tutorials/robotics_tutorial.pdf) on the application of the Fedot to solve grasp stability prediction task.
 
-The [tutorial](../tutorials/economics_tutorial.pdf) on the application of the Fedot to solve economy fraud detection task.
+The [tutorial](../tutorials/economics_tutorial.pdf) on the application of the Fedot to solve fraud detection task.
