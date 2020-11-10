@@ -29,9 +29,18 @@ The data transfer between nodes can be represented as follows:
 
 As an example, if you want to apply the ROC-AUCs quality metric to the algorithm, you need to initialize it as follows:
 
+<details>
+<summary>Metric function code</summary>
+<p>
+
 ``` python
 metric_function = MetricsRepository().metric_by_id(ClassificationMetricsEnum.ROCAUC)
 ```
+
+</p>
+</details>  
+
+
 
 ## Output data
 The output is the ML-model tree found by an evolutionary algorithm and converted using _tree_to_chain method into the ML-model chain.
@@ -55,6 +64,10 @@ The developed implementation uses tournament selection of individuals realized i
 
 Selection is implemented as follows:
 
+<details>
+<summary>Selection code</summary>
+<p>
+
 ```python
 def tournament_selection(fitnesses, group_size=5):
     selected = []
@@ -73,6 +86,11 @@ def tournament_selection(fitnesses, group_size=5):
     return selected
 ```
 
+</p>
+</details>  
+
+
+
 ### 4. Breeding
 The standard breeding type implemented in the standard_crossover method was used. After selecting the parents in the selection step for each parent pair:
 1. Breeding point is chosen from every available parent.
@@ -81,6 +99,10 @@ The standard breeding type implemented in the standard_crossover method was used
 <img src="img/img-algorithm-chains/tree-breeding.gif" alt="drawing" width="700"/>
 
 Breeding is implemented as follows:
+
+<details>
+<summary>Breeding code</summary>
+<p>
 
 ```python
 def standard_crossover(tree1, tree2, max_depth, 
@@ -107,12 +129,21 @@ def standard_crossover(tree1, tree2, max_depth,
     else:
         return tree1_copy
    ```
+
+</p>
+</details>  
+
+
 ### 5. Mutation
 In the standard_mutation method, a point mutation scheme was implemented. A randomly selected node in the tree changes to a randomly selected element of the same type. I.e. the selected node is replaced by a randomly selected member of a set of valid models for primary nodes if that node belongs to that type, or a member of a set of valid secondary nodes.
 
 <img src="img/img-algorithm-chains/mutation-scheme.png" alt="drawing" width="700"/>
 
 Mutation is implemented as follows:
+
+<details>
+<summary>Mutation code</summary>
+<p>
 
 ```python
 def standard_mutation(root_node, secondary_requirements, 
@@ -135,6 +166,12 @@ def standard_mutation(root_node, secondary_requirements,
 
     return result
 ```
+
+</p>
+</details>  
+
+
+
 ## How to use the algorithm for applications
 First, you must define the model classes for which you want to chain. Their start and calculation is given to the external software complex in which the algorithm is embedded.
 Binding with external functions is implemented through callback mechanics - that is, an object/function is passed to the algorithm optimizer as an external parameter, which, for example, can track changes in the population. 
@@ -144,6 +181,10 @@ Evolutionary operators are preferably separated into separate scripts and divide
 
 ## Guide for the advanced developer
 For practical application of GPComp, it is useful to create a GPComposer wrapper class. For abstraction from a particular implementation of chains and models within a framework, only the functions providing such creation are passed to the GPChainOptimiser class implementing the GPComp algorithm as an argument.
+
+<details>
+<summary>GPComp code</summary>
+<p>
 
 ```python
 class GPComposer(Composer):
@@ -165,7 +206,18 @@ class GPComposer(Composer):
         return best_chain
 ```
 
+</p>
+</details>  
+
+
+
+
 Compositional requirements can be specified as particular class-GPComposerRequirements inherited from the general ComposerRequirements.
+
+<details>
+<summary>Composer requirements code</summary>
+<p>
+
 
 ```python
 composer_requirements = GPComposerRequirements(
@@ -175,7 +227,16 @@ composer_requirements = GPComposerRequirements(
     crossover_prob=0.4, mutation_prob=0.5)
 ```
 
+</p>
+</details>  
+
+
 The obtained chains are visualized using the networking library:
+
+<details>
+<summary>Chain visualisation example code</summary>
+<p>
+
 
 ```python
 graph, node_labels = _as_nx_graph(chain=deepcopy(chain))
@@ -187,7 +248,17 @@ graph, node_labels = _as_nx_graph(chain=deepcopy(chain))
                     node_color=colors_by_node_labels(node_labels), cmap='Set3')
 ```
 
+</p>
+</details>  
+
+
+
 To evaluate the quality of the scoring model, use the ROC ACC metric, the implementation of which can be obtained from the sklearn.metrics library.
+
+<details>
+<summary>Metric example code</summary>
+<p>
+
 
 ```python
 def calculate_validation_metric(chain: Chain, dataset_to_validate: InputData) -> float:
@@ -199,7 +270,18 @@ def calculate_validation_metric(chain: Chain, dataset_to_validate: InputData) ->
     return roc_auc_value
 ```
 
+
+</p>
+</details>  
+
+
+
 One should obtain input data from the file as follows:
+
+<details>
+<summary>Input data example code</summary>
+<p>
+
 
 ```python
 def from_csv(file_path):
@@ -212,7 +294,19 @@ def from_csv(file_path):
         return InputData(idx=idx, features=features, target=target)
 ```
 
+
+</p>
+</details>  
+
+
+
+
 The combination of predictions from the outputs of several models (to transmit them to the input of the next model in the chain) can be done as follows:
+
+<details>
+<summary>From prediction node example code</summary>
+<p>
+
 
 ```python
 def from_predictions(outputs: List['OutputData'], target: np.array):
@@ -223,7 +317,16 @@ def from_predictions(outputs: List['OutputData'], target: np.array):
     return InputData(idx=idx, features=np.array(features).T, target=target)
 ```
 
+</p>
+</details>  
+
+
+
 One can use the Chain class to integrate multiple models into a chain. New nodes are added using the chain_add method. Use the NodeGenerator class methods to create a node with the specified model type.
+
+<details>
+<summary>Complex chain example code</summary>
+<p>
 
 ```python
 complex_chain = Chain()
@@ -250,3 +353,7 @@ complex_chain.add_node(y6)
 last_node.nodes_from = [y3, y6]
 complex_chain.add_node(last_node)
 ```
+</p>
+</details>  
+
+
