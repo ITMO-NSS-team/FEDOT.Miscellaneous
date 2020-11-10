@@ -31,13 +31,11 @@ As an example, if you want to apply the ROC-AUCs quality metric to the algorithm
 
 <details>
 <summary>Metric function code</summary>
-<p>
 
 ``` python
 metric_function = MetricsRepository().metric_by_id(ClassificationMetricsEnum.ROCAUC)
 ```
 
-</p>
 </details>  
 
 
@@ -66,7 +64,6 @@ Selection is implemented as follows:
 
 <details>
 <summary>Selection code</summary>
-<p>
 
 ```python
 def tournament_selection(fitnesses, group_size=5):
@@ -86,7 +83,6 @@ def tournament_selection(fitnesses, group_size=5):
     return selected
 ```
 
-</p>
 </details>  
 
 
@@ -102,7 +98,6 @@ Breeding is implemented as follows:
 
 <details>
 <summary>Breeding code</summary>
-<p>
 
 ```python
 def standard_crossover(tree1, tree2, max_depth, 
@@ -130,7 +125,6 @@ def standard_crossover(tree1, tree2, max_depth,
         return tree1_copy
    ```
 
-</p>
 </details>  
 
 
@@ -143,7 +137,6 @@ Mutation is implemented as follows:
 
 <details>
 <summary>Mutation code</summary>
-<p>
 
 ```python
 def standard_mutation(root_node, secondary_requirements, 
@@ -167,7 +160,6 @@ def standard_mutation(root_node, secondary_requirements,
     return result
 ```
 
-</p>
 </details>  
 
 
@@ -184,7 +176,6 @@ For practical application of GPComp, it is useful to create a GPComposer wrapper
 
 <details>
 <summary>GPComp code</summary>
-<p>
 
 ```python
 class GPComposer(Composer):
@@ -206,7 +197,6 @@ class GPComposer(Composer):
         return best_chain
 ```
 
-</p>
 </details>  
 
 
@@ -216,7 +206,6 @@ Compositional requirements can be specified as particular class-GPComposerRequir
 
 <details>
 <summary>Composer requirements code</summary>
-<p>
 
 
 ```python
@@ -227,7 +216,6 @@ composer_requirements = GPComposerRequirements(
     crossover_prob=0.4, mutation_prob=0.5)
 ```
 
-</p>
 </details>  
 
 
@@ -235,7 +223,7 @@ The obtained chains are visualized using the networking library:
 
 <details>
 <summary>Chain visualisation example code</summary>
-<p>
+
 
 
 ```python
@@ -248,7 +236,7 @@ graph, node_labels = _as_nx_graph(chain=deepcopy(chain))
                     node_color=colors_by_node_labels(node_labels), cmap='Set3')
 ```
 
-</p>
+
 </details>  
 
 
@@ -257,7 +245,7 @@ To evaluate the quality of the scoring model, use the ROC ACC metric, the implem
 
 <details>
 <summary>Metric example code</summary>
-<p>
+
 
 
 ```python
@@ -271,7 +259,7 @@ def calculate_validation_metric(chain: Chain, dataset_to_validate: InputData) ->
 ```
 
 
-</p>
+
 </details>  
 
 
@@ -280,7 +268,7 @@ One should obtain input data from the file as follows:
 
 <details>
 <summary>Input data example code</summary>
-<p>
+
 
 
 ```python
@@ -295,7 +283,7 @@ def from_csv(file_path):
 ```
 
 
-</p>
+
 </details>  
 
 
@@ -305,7 +293,7 @@ The combination of predictions from the outputs of several models (to transmit t
 
 <details>
 <summary>From prediction node example code</summary>
-<p>
+
 
 
 ```python
@@ -317,7 +305,7 @@ def from_predictions(outputs: List['OutputData'], target: np.array):
     return InputData(idx=idx, features=np.array(features).T, target=target)
 ```
 
-</p>
+
 </details>  
 
 
@@ -326,7 +314,7 @@ One can use the Chain class to integrate multiple models into a chain. New nodes
 
 <details>
 <summary>Complex chain example code</summary>
-<p>
+
 
 ```python
 complex_chain = Chain()
@@ -353,7 +341,7 @@ complex_chain.add_node(y6)
 last_node.nodes_from = [y3, y6]
 complex_chain.add_node(last_node)
 ```
-</p>
+
 </details>  
 
 
