@@ -1,69 +1,87 @@
-## Sea surface height forecasting problem
+## Time series forecasting. Metocean example
 
-One of the well-known modeling tasks is a simulation of the time series. One of the real-world cases, connected with this task, is a metocean forecasting. The prediction of the weather or climate in a single spatial point is an actual and important problem for the many industrial and R&D activities.
-To separate the metocean process into several scales, an iterative approach can be used to extract each scale. This approach consists of the application of the LSTM network and the subtraction of its prediction results from the original time series. Using this architecture, a non-linear trend can be distinguished from a non-stationary time series during the first iteration. The next iteration gives some resemblance to the seasonal component.
-The advantage of this approach can be considered to be the extraction of the trend and seasonal component without a priori assumptions about their shape. However, the same feature can be understood as a disadvantage, meaning the resulting components are less interpretable because a neural network is used.
-As an example of the metocean forecasting task, the time series of the surface height at the point obtained from the modelling results of the NEMO model for the Arctic region was taken. An LSTM model was used to predict values at the next point in time. Its architecture is shown below.
+Time series processing is widely used in engineering and scientific tasks. 
+One of the most common cases with time series is forecasting, when we try to predict values in the future based on historical data. 
+In this application example, we will demonstrate the capabilities of the FEDOT framework and the [AutoTs](https://github.com/winedarksea/AutoTS) competitor library (and compare them) in time series forecasting. 
+We will perform a comparative analysis of the two libraries using the example of time series forecasting with different discreteness and different forecast lengths (Figure 1).
 
-<img src="img_metocean/LSTM-architecture.png" alt="drawing" width="400"/>
+<img src="img_metocean/time_series.png" alt="drawing" width="500"/>
 
-A lag window equal to 12 hours was chosen for the experiment. Thus, using values in the previous 12 hours to train the neural network, we try to predict what will happen at the next point in time.
-At the initial block of the model, Conv1d layers can be used to find patterns in a time series (such as curvature). An adding noise layer from the normal distribution to the input data was also added - this technique helps to avoid over-learning of the model. The last TimeDistributed layer converts the resulting features from the previous layers to the output value. Inside it, a Dropout layer is used - which also helps avoid over-learning.
- 
-Two decomposition scales are shown as an example. The first of them is a trend component. An example of the highlighted trend is shown below.
+Figure 1. Time series of sea height with the length of 3784 elements
 
-<img src="img_metocean/trend-component-example.png" alt="drawing" width="700"/>
+Time series with daily data was obtained from satellite altimetry gridded [data](https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-sea-level-global?tab=overview), time series with hourly data was obtained from NEMO model. 
+Considered forecast lengths - 10, 50, 100, 150, 200, 400, 500, 700 elements. 
+Metrics: mean absolute error (MAE) and mean absolute percentage error (MAPE).
 
-On the left: selected trend component (orange) against the original time series (full data set); on the right, the difference between the selected trend and the original time series (the seasonal component).
+Four different chains were used for FEDOT-based forecasting. 
+Three of them were set manually and their structure did not change during the model training. 
+The 4th chain was selected automatically using an evolutionary algorithm (Figure 2).
 
+<img src="img_metocean/chain_example.png" alt="drawing" width="400"/>
 
-<img src="img_metocean/seasonal-component-example.png" alt="drawing" width="700"/>
+Figure 2. Example of the chains used for forecasting. 1) – single-model chain, 2) – simple chain, 3) - multiscale chain, 4) – generated chain.
 
-On the left: the selected trend component (orange) vs the background of the original time series (part of the dataset); on the right: the difference between the selected trend and the original time series is the seasonal component.
- 
-After training, the trend model  was tested on a validation sample. All validation samples, predictions and their difference (seasonal component) is shown below.
-Top-down: the resulting trend model, validation sample and their difference:
+The predictions of the first-level model are predictors for the second-level model, etc. 
+As can be seen from the Figure 2, it is possible to predict the trend and the remnants of the trend separately. 
+For more information about such time series forecasting approach (with trend and residuals), you can check this [page](https://itmo-nss-team.github.io/FEDOT.Docs/real_cases/multiscale-forecasting). 
 
-<img src="img_metocean/trend-model1.png" alt="drawing" width="700"/>
+### Time series preprocessing
 
-The resulting trend model has a standard error of 0.01 m on the validation sample.
- 
- 
-The model for the seasonal component was obtained similarly. The results of the validation sample prediction are shown below.
-The result of predicting the seasonal component model (orange) on the entire validation sample (blue).
+In FEDOT, the approach to building models on time series is based on lagged data transformation. 
+The general concept of how the model is trained can be seen in the animation below. 
+A table is compiled where the features are elements of a time series taken with different lags.
 
-<img src="img_metocean/validation-residuals-prediction1.png" alt="drawing" width="700"/>
+<img src="/img_metocean/ts_preprocessing.gif" alt="drawing" width="700"/>
 
- The result of predicting the seasonal component model (orange) was compared with the validation sample (blue).
+Thus, on the compiled table, it is possible to train both single machine learning models, and to build chains of several models, as FEDOT can do.
 
-<img src="img_metocean/validation-residuals-prediction2.png" alt="drawing" width="700"/>
+If you are interested in a more detailed analysis of how you can forecast time series using FEDOT, then see the detailed [tutorial](https://github.com/nccr-itmo/FEDOT/blob/master/notebooks/time_series_forecasting/Time%20series%20forecasting%20with%20FEDOT.ipynb).
 
-The resulting seasonal component model has a standard error of 0.03 m on the validation sample.
- 	
-The implementation of such structure (LSTM+regression model for different scales) as Fedot composite model can be represented as follows:
+As you can see from the animation, a very important hyperparameter of the algorithm is the size of the moving window. 
+In this case, it was equal to 3 elements, but you can use any integer number. 
+In order to determine the most optimal size of the sliding window, a complete search was used for the following window sizes: 10, 50, 100, 150, 200, 400, 500, 700 elements. 
+The algorithm launch’s metrics were averaged 5 times for each set of hyperparameters. 
+The AutoTs library also used the error averaging procedure for 5 launches.
 
-<img src="img_metocean/fedot-implementation.png" alt="drawing" width="700"/>
+## Results
 
-So, the implementation of the described model can be obtained by following code:
+Below is a picture with an example of a forecast for 200 elements for daily sea level data.
 
-```python
-chain = Chain()
-node_trend = NodeGenerator.primary_node(ModelTypesIdsEnum.trend_data_model)
-node_lstm_trend = NodeGenerator.secondary_node(ModelTypesIdsEnum.lstm, nodes_from=[node_trend])
+<img src="/img_metocean/forecasts.png" alt="drawing" width="800"/>
 
-node_residual = NodeGenerator.primary_node(ModelTypesIdsEnum.residual_data_model)
-node_ridge_residual = NodeGenerator.secondary_node(ModelTypesIdsEnum.ridge, nodes_from=[node_residual])
+Figure 3. Examples of forecasts from the AutoTs library and generated chain
 
-node_final = NodeGenerator.secondary_node(ModelTypesIdsEnum.additive_data_model,
-                                          nodes_from=[node_ridge_residual, node_lstm_trend])
-chain.add_node(node_final)
-```
-To obtain a forecast, the chain_lstm.predict(dataset_to_validate) should be called.
+The average results are summarized in a table.
 
-The forecasts with different depth are differs as:
+Table 1. Comparison of the FEDOT-based time series forecasting algorithm and the AutoTS library. The size of the moving window is shown in brackets.
 
-<img src="img_metocean/forecast-lstm.gif" alt="drawing" width="500"/>
+|     Algorithm                                                                          |     Daily data     |                   |     Hourly data    |                    |
+|----------------------------------------------------------------------------------------|--------------------|-------------------|--------------------|--------------------|
+|                                                                                        |     MAE            |     MAPE          |     MAE            |     MAPE           |
+|     Metrics for the best moving window size                                            |                    |                   |                    |                    |
+|     Single-model chain (baseline)                                                      |     0.059 (100)    |     8.14 (200)    |     0.118 (10)     |     11.52 (10)     |
+|     Simple chain                                                                       |     0.070 (700)    |     9.60 (700)    |     0.137 (50)     |     13.78 (50)     |
+|     Multiscale chain                                                                   |     0.058 (10)     |     8.00 (10)     |     0.163 (150)    |     16.82 (150)    |
+|     Generated chain                                                                    |     0.056 (200)    |     7.47 (200)    |     0.118 (10)     |     11.49 (10)     |
+|     Averaged metrics for all variants of moving window sizes and algorithm launches    |                    |                   |                    |                    |
+|     Generated chain                                                                    |     0.064          |     8.69          |     0.132          |     13.39          |
+|     AutoTS                                                                             |     0.083          |     11.36         |     0.159          |     17.19          |
 
-The example of the optimisation for the predictive chain:
+As you can see from the table, the FEDOT-based algorithms were more accurate. 
+The results of the analysis of the chains obtained by the evolutionary algorithm and their prediction accuracy are shown in Figure 4.
 
-<img src="/FEDOT.Docs/real_cases/img_metocean/ts_opt.gif" alt="drawing" width="1000"/>
+<img src="/img_metocean/heat_maps.png" alt="drawing" width="800"/>
+
+Figure 4. Results of the chains obtained by the evolutionary algorithm for sea level forecasting for hourly data.
+
+On the figure 4 can be seen that for small values of the moving window, the evolutionary algorithm gives preference to simple chains with single model. 
+With the increase of the moving window algorithm can detect more complex patterns in the data and to grow deeper chains.
+
+Case a shows that not always deeper chains give less error, sometimes single models do better, and the evolutionary algorithm in most cases prefers them. 
+Case b shows that for longer moving window sizes, it is advisable to build deeper chains, since their use allows making more accurate forecasts.
+
+## Conclusion
+
+Thus, we saw that in these examples, FEDOT-based forecasting algorithms are more accurate than the competitor AutoTS library. 
+The evolutionary algorithm finds more optimal solutions than the chains set manually. 
+To build the most complex models, it makes sense to build algorithms on large sliding window sizes.
