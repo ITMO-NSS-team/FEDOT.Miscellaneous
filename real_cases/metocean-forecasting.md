@@ -3,26 +3,33 @@
 Time series processing is widely used in engineering and scientific tasks. 
 One of the most common cases with time series is forecasting, when we try to predict values in the future based on historical data. 
 In this application example, we will demonstrate the capabilities of the FEDOT framework and the [AutoTs](https://github.com/winedarksea/AutoTS) competitor library (and compare them) in time series forecasting. 
-We will perform a comparative analysis of the two libraries using the example of time series forecasting with different discreteness and different forecast lengths (Figure 1).
+We will perform a comparative analysis of the two libraries using the example of time series forecasting with different discreteness and different forecast lengths.
+
+Time series with daily data was obtained from satellite altimetry gridded [data](https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-sea-level-global?tab=overview) (Figure 1). 
+
+<img src="img_metocean/sea_map.png" alt="drawing" width="500"/>
+
+Figure 1. Map of the location of the point where sea surface height above the average surface of the geoid (the heatmap is presented for 01.01.2003) values were extracted.
+
+Time series with hourly data was obtained from NEMO model for a point in Arctic region.
 
 <img src="img_metocean/time_series.png" alt="drawing" width="500"/>
 
-Figure 1. Time series of sea height with the length of 3784 elements
+Figure 2. Time series of sea height with the length of 3784 elements
 
-Time series with daily data was obtained from satellite altimetry gridded [data](https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-sea-level-global?tab=overview), time series with hourly data was obtained from NEMO model. 
 Considered forecast lengths - 10, 50, 100, 150, 200, 400, 500, 700 elements. 
 Metrics: mean absolute error (MAE) and mean absolute percentage error (MAPE).
 
 Four different chains were used for FEDOT-based forecasting. 
 Three of them were set manually and their structure did not change during the model training. 
-The 4th chain was selected automatically using an evolutionary algorithm (Figure 2).
+The 4th chain was selected automatically using an evolutionary algorithm (Figure 3).
 
 <img src="img_metocean/chain_example.png" alt="drawing" width="400"/>
 
-Figure 2. Example of the chains used for forecasting. 1) – single-model chain, 2) – simple chain, 3) - multiscale chain, 4) – generated chain.
+Figure 3. Example of the chains used for forecasting. 1) – single-model chain, 2) – simple chain, 3) - multiscale chain, 4) – generated chain.
 
 The predictions of the first-level model are predictors for the second-level model, etc. 
-As can be seen from the Figure 2, it is possible to predict the trend and the remnants of the trend separately. 
+As can be seen from the Figure 3, it is possible to predict the trend and the remnants of the trend separately. 
 For more information about such time series forecasting approach (with trend and residuals), you can check this [page](https://itmo-nss-team.github.io/FEDOT.Docs/real_cases/multiscale-forecasting). 
 
 ### Time series preprocessing
@@ -49,32 +56,37 @@ Below is a picture with an example of a forecast for 200 elements for daily sea 
 
 <img src="/img_metocean/forecasts.png" alt="drawing" width="800"/>
 
-Figure 3. Examples of forecasts from the AutoTs library and generated chain
+Figure 4. Examples of forecasts from the AutoTs library and generated chain
 
-The average results are summarized in a table.
+The average results are summarized in several tables:
 
-Table 1. Comparison of the FEDOT-based time series forecasting algorithm and the AutoTS library. The size of the moving window is shown in brackets.
+Table 1. Obtained metrics of FEDOT chains with the best moving window size. The size of the moving window is shown in brackets.
 
 |     Algorithm                                                                          |     Daily data     |                   |     Hourly data    |                    |
 |----------------------------------------------------------------------------------------|--------------------|-------------------|--------------------|--------------------|
-|                                                                                        |     MAE            |     MAPE          |     MAE            |     MAPE           |
-|     Metrics for the best moving window size                                            |                    |                   |                    |                    |
+|                                                                                        |     MAE            |     MAPE          |     MAE            |     MAPE           |       
 |     Single-model chain (baseline)                                                      |     0.059 (100)    |     8.14 (200)    |     0.118 (10)     |     11.52 (10)     |
 |     Simple chain                                                                       |     0.070 (700)    |     9.60 (700)    |     0.137 (50)     |     13.78 (50)     |
 |     Multiscale chain                                                                   |     0.058 (10)     |     8.00 (10)     |     0.163 (150)    |     16.82 (150)    |
-|     Generated chain                                                                    |     0.056 (200)    |     7.47 (200)    |     0.118 (10)     |     11.49 (10)     |
-|     Averaged metrics for all variants of moving window sizes and algorithm launches    |                    |                   |                    |                    |
-|     Generated chain                                                                    |     0.064          |     8.69          |     0.132          |     13.39          |
-|     AutoTS                                                                             |     0.083          |     11.36         |     0.159          |     17.19          |
+|     Generated chain                                                                    |   **0.056 (200)**  |   **7.47 (200)**  |   **0.118 (10)**   |   **11.49 (10)**   |
 
-As you can see from the table, the FEDOT-based algorithms were more accurate. 
-The results of the analysis of the chains obtained by the evolutionary algorithm and their prediction accuracy are shown in Figure 4.
+Table 2. Comparison of the FEDOT-based time series forecasting algorithm and the AutoTS library. Averaged metrics for all variants of moving window sizes and algorithm launches.
+
+|     Algorithm                |     Daily data    |              |     Hourly data    |              |
+|------------------------------|-------------------|--------------|--------------------|--------------|
+|                              |     MAE           |     MAPE     |     MAE            |     MAPE     |
+|     FEDOT generated chain    |     0.064         |     8.69     |     0.132          |     13.39    |
+|     AutoTS                   |     0.083         |     11.36    |     0.159          |     17.19    |
+
+
+As you can see from the table 2, the FEDOT-based algorithms were more accurate. 
+The results of the analysis of the chains obtained by the evolutionary algorithm and their prediction accuracy are shown in Figure 5.
 
 <img src="/img_metocean/heat_maps.png" alt="drawing" width="800"/>
 
-Figure 4. Results of the chains obtained by the evolutionary algorithm for sea level forecasting for hourly data.
+Figure 5. Results of the chains obtained by the evolutionary algorithm for sea level forecasting for hourly data.
 
-On the figure 4 can be seen that for small values of the moving window, the evolutionary algorithm gives preference to simple chains with single model. 
+From the Figure 5 can be seen that for small values of the moving window, the evolutionary algorithm gives preference to simple chains with single model. 
 With the increase of the moving window algorithm can detect more complex patterns in the data and to grow deeper chains.
 
 Case a shows that not always deeper chains give less error, sometimes single models do better, and the evolutionary algorithm in most cases prefers them. 
