@@ -38,7 +38,7 @@ In FEDOT, the approach to building models on time series is based on lagged data
 The general concept of how the model is trained can be seen in the animation below. 
 A table is compiled where the features are elements of a time series taken with different lags.
 
-<img src="/img_metocean/ts_preprocessing.gif" alt="drawing" width="700"/>
+<img src="img_metocean/ts_preprocessing.gif" alt="drawing" width="700"/>
 
 Thus, on the compiled table, it is possible to train both single machine learning models, and to build chains of several models, as FEDOT can do.
 
@@ -54,7 +54,7 @@ The AutoTs library also used the error averaging procedure for 5 launches.
 
 Below is a picture with an example of a forecast for 200 elements for daily sea level data.
 
-<img src="/img_metocean/forecasts.png" alt="drawing" width="800"/>
+<img src="img_metocean/forecasts.png" alt="drawing" width="800"/>
 
 Figure 4. Examples of forecasts from the AutoTs library and generated chain
 
@@ -62,17 +62,17 @@ The average results are summarized in several tables:
 
 Table 1. Obtained metrics of FEDOT chains with the best moving window size. The size of the moving window is shown in brackets.
 
-|     Algorithm                                                                          |     Daily data     |                   |     Hourly data    |                    |
-|----------------------------------------------------------------------------------------|--------------------|-------------------|--------------------|--------------------|
-|                                                                                        |     MAE            |     MAPE          |     MAE            |     MAPE           |       
-|     Single-model chain (baseline)                                                      |     0.059 (100)    |     8.14 (200)    |     0.118 (10)     |     11.52 (10)     |
-|     Simple chain                                                                       |     0.070 (700)    |     9.60 (700)    |     0.137 (50)     |     13.78 (50)     |
-|     Multiscale chain                                                                   |     0.058 (10)     |     8.00 (10)     |     0.163 (150)    |     16.82 (150)    |
-|     Generated chain                                                                    |   **0.056 (200)**  |   **7.47 (200)**  |   **0.118 (10)**   |   **11.49 (10)**   |
+|     Algorithm                      |     Daily data     |                   |     Hourly data    |                    |
+|------------------------------------|--------------------|-------------------|--------------------|--------------------|
+|                                    |     MAE            |     MAPE          |     MAE            |     MAPE           |       
+|     Single-model chain (baseline)  |     0.059 (100)    |     8.14 (200)    |     0.118 (10)     |     11.52 (10)     |
+|     Simple chain                   |     0.070 (700)    |     9.60 (700)    |     0.137 (50)     |     13.78 (50)     |
+|     Multiscale chain               |     0.058 (10)     |     8.00 (10)     |     0.163 (150)    |     16.82 (150)    |
+|     Generated chain                |   **0.056 (200)**  |   **7.47 (200)**  |   **0.118 (10)**   |   **11.49 (10)**   |
 
 Table 2. Comparison of the FEDOT-based time series forecasting algorithm and the AutoTS library. Averaged metrics for all variants of moving window sizes and algorithm launches.
 
-|     Algorithm                |     Daily data    |              |     Hourly data    |              |
+|     Algorithm                |     Daily data    |              |     Hourly data                  ||
 |------------------------------|-------------------|--------------|--------------------|--------------|
 |                              |     MAE           |     MAPE     |     MAE            |     MAPE     |
 |     FEDOT generated chain    |     0.064         |     8.69     |     0.132          |     13.39    |
@@ -82,7 +82,7 @@ Table 2. Comparison of the FEDOT-based time series forecasting algorithm and the
 As you can see from the table 2, the FEDOT-based algorithms were more accurate. 
 The results of the analysis of the chains obtained by the evolutionary algorithm and their prediction accuracy are shown in Figure 5.
 
-<img src="/img_metocean/heat_maps.png" alt="drawing" width="800"/>
+<img src="img_metocean/heat_maps.png" alt="drawing" width="800"/>
 
 Figure 5. Results of the chains obtained by the evolutionary algorithm for sea level forecasting for hourly data.
 
