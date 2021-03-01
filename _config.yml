@@ -1,7 +1,7 @@
 title: "Fedot"
 date: 2020-05-28
 theme: jekyll-theme-minimal
-markdown: CommonMarkGhPages
+markdown: kramdown
 description: > # this means to ignore newlines until "baseurl:"
   <div class='menu-group'>
     <div class='main-menu-item'><a href="/FEDOT.Docs/autolearning/main">Automated learning</a></div>

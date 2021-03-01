@@ -1,6 +1,6 @@
 ## Prediction of the stability of residual fuels for sedimentation during storage in tanks
 
-At the facilities for storage of oil products are often in the production process there is a mix of various types of petroleum products. However, if the mixed oil products are incompatible, then there are qualitative losses, namely, the active form of the total sediment. The result of incompatibility-
+At the facilities for storage of oil products are often in the production process there is a mix of various types of petroleum products. However, if the mixed oil products are incompatible, then there are qualitative losses, namely, the active form of the total sediment. The result of incompatibility:
 * Deterioration of the quality of petroleum products;
 * Promotes wear and clogging of technological systems;
 * An increase in the intensity of accumulation of "dead" residue on the tanks, which leads to a decrease in the useful volume of the tanks;
@@ -14,16 +14,16 @@ At the facilities for storage of oil products are often in the production proces
 The International Maritime Organization (IMO) Committee for the Protection of the Marine Environment (MEPC) has approved a ban on the transport of marine fuels with a sulfur content of more than 0.5%, which will enter into force on March 1, 2020. Determining the composition of the fuel and the presence of sediment in it is a very expensive process(the most commonly used method is chromatography, the cost is about 1 million rubles per sample).
 Using historical data containing information about the parameters of fuel and various mixtures, and the functionality of the AutoML framework FEDOT, it will be possible to model mixtures with the lowest sediment content.
 
-**_Established approach-_**
+**_Established approach:_**
 * Xylitol/TThe toluene method
 * A method based on state industry standards
 
-**_The disadvantages of this approach-_**
+**_The disadvantages of this approach:_**
 * To spend more time on the solution to the problem
 * The complexity of manual verification
 * The high cost of the test
 
-**_Solution-_**
+**_Solution:**
 Since the final goals are to predict the amount of sediment, 
 as well as the classification of fuel mixtures into dangerous and non-dangerous, from the point of view of precipitation, 
 this task can be simultaneously interpreted as both regression task and classification task. The formulation of this problem in the form of a machine learning task is shown in Table 1.
