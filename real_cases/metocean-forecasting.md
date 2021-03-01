@@ -68,28 +68,24 @@ Table 1. Obtained metrics of FEDOT chains with the best moving window size. The 
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-c3ow">   <br>Algorithm   </th>
-    <th class="tg-c3ow">   <br>Daily data   </th>
-    <th class="tg-c3ow"></th>
-    <th class="tg-c3ow">   <br>Hourly data   </th>
-    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" rowspan="2"><br><br>Algorithm</th>
+    <th class="tg-c3ow" colspan="2">   <br>Daily data   </th>
+    <th class="tg-c3ow" colspan="2">   <br>Hourly data   </th>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
   </tr>
 </thead>
 <tbody>
-  <tr>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow">   <br>MAE   </td>
-    <td class="tg-c3ow">   <br>MAPE   </td>
-    <td class="tg-c3ow">   <br>MAE   </td>
-    <td class="tg-c3ow">   <br>MAPE   </td>
-  </tr>
   <tr>
     <td class="tg-c3ow">Single-model chain (baseline)</td>
     <td class="tg-c3ow">0.059 (100)</td>
@@ -105,18 +101,18 @@ Table 1. Obtained metrics of FEDOT chains with the best moving window size. The 
     <td class="tg-c3ow">13.78 (50)</td>
   </tr>
   <tr>
-    <td class="tg-baqh">Multiscale chain</td>
-    <td class="tg-baqh">0.058 (10)</td>
-    <td class="tg-baqh">8.00 (10)</td>
-    <td class="tg-baqh">0.163 (150)</td>
-    <td class="tg-baqh">16.82 (150)</td>
+    <td class="tg-c3ow">Multiscale chain</td>
+    <td class="tg-c3ow">0.058 (10)</td>
+    <td class="tg-c3ow">8.00 (10)</td>
+    <td class="tg-c3ow">0.163 (150)</td>
+    <td class="tg-c3ow">16.82 (150)</td>
   </tr>
   <tr>
-    <td class="tg-amwm">Generated chain</td>
-    <td class="tg-amwm">0.056 (200)</td>
-    <td class="tg-amwm">7.47 (200)</td>
-    <td class="tg-amwm">0.118 (10)</td>
-    <td class="tg-amwm">11.49 (10)</td>
+    <td class="tg-7btt">Generated chain</td>
+    <td class="tg-7btt">0.056 (200)</td>
+    <td class="tg-7btt">7.47 (200)</td>
+    <td class="tg-7btt">0.118 (10)</td>
+    <td class="tg-7btt">11.49 (10)</td>
   </tr>
 </tbody>
 </table>
@@ -129,39 +125,36 @@ Table 2. Comparison of the FEDOT-based time series forecasting algorithm and the
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-0pky">   <br>Algorithm   </th>
-    <th class="tg-0pky">   <br>Daily data   </th>
-    <th class="tg-0pky"></th>
-    <th class="tg-0pky">   <br>Hourly data   </th>
-    <th class="tg-0pky"></th>
+    <th class="tg-c3ow" rowspan="2"><br><br>Algorithm</th>
+    <th class="tg-c3ow" colspan="2">   <br>Daily data   </th>
+    <th class="tg-c3ow" colspan="2">   <br>Hourly data   </th>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">   <br>MAE   </td>
-    <td class="tg-0pky">   <br>MAPE   </td>
-    <td class="tg-0pky">   <br>MAE   </td>
-    <td class="tg-0pky">   <br>MAPE   </td>
+    <td class="tg-c3ow">FEDOT generated chain</td>
+    <td class="tg-c3ow">0.064</td>
+    <td class="tg-c3ow">8.69</td>
+    <td class="tg-c3ow">0.132</td>
+    <td class="tg-c3ow">13.39</td>
   </tr>
   <tr>
-    <td class="tg-0pky">   <br>FEDOT generated chain   </td>
-    <td class="tg-0pky">   <br>0.064   </td>
-    <td class="tg-0pky">   <br>8.69   </td>
-    <td class="tg-0pky">   <br>0.132   </td>
-    <td class="tg-0pky">   <br>13.39   </td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">   <br>AutoTS   </td>
-    <td class="tg-0pky">   <br>0.083   </td>
-    <td class="tg-0pky">   <br>11.36   </td>
-    <td class="tg-0pky">   <br>0.159   </td>
-    <td class="tg-0pky">   <br>17.19   </td>
+    <td class="tg-c3ow">AutoTS</td>
+    <td class="tg-c3ow">0.083</td>
+    <td class="tg-c3ow">11.36</td>
+    <td class="tg-c3ow">0.159</td>
+    <td class="tg-c3ow">17.19</td>
   </tr>
 </tbody>
 </table>
