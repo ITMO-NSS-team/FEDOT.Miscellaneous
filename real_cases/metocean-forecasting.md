@@ -62,21 +62,109 @@ The average results are summarized in several tables:
 
 Table 1. Obtained metrics of FEDOT chains with the best moving window size. The size of the moving window is shown in brackets.
 
-|     Algorithm                      |     Daily data     |                   |     Hourly data    |                    |
-|------------------------------------|--------------------|-------------------|--------------------|--------------------|
-|                                    |     MAE            |     MAPE          |     MAE            |     MAPE           |       
-|     Single-model chain (baseline)  |     0.059 (100)    |     8.14 (200)    |     0.118 (10)     |     11.52 (10)     |
-|     Simple chain                   |     0.070 (700)    |     9.60 (700)    |     0.137 (50)     |     13.78 (50)     |
-|     Multiscale chain               |     0.058 (10)     |     8.00 (10)     |     0.163 (150)    |     16.82 (150)    |
-|     Generated chain                |   **0.056 (200)**  |   **7.47 (200)**  |   **0.118 (10)**   |   **11.49 (10)**   |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">   <br>Algorithm   </th>
+    <th class="tg-c3ow">   <br>Daily data   </th>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow">   <br>Hourly data   </th>
+    <th class="tg-c3ow"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
+    <td class="tg-c3ow">   <br>MAE   </td>
+    <td class="tg-c3ow">   <br>MAPE   </td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Single-model chain (baseline)</td>
+    <td class="tg-c3ow">0.059 (100)</td>
+    <td class="tg-c3ow">8.14 (200)</td>
+    <td class="tg-c3ow">0.118 (10)</td>
+    <td class="tg-c3ow">11.52 (10)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Simple chain</td>
+    <td class="tg-c3ow">0.070 (700)</td>
+    <td class="tg-c3ow">9.60 (700)</td>
+    <td class="tg-c3ow">0.137 (50)</td>
+    <td class="tg-c3ow">13.78 (50)</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Multiscale chain</td>
+    <td class="tg-baqh">0.058 (10)</td>
+    <td class="tg-baqh">8.00 (10)</td>
+    <td class="tg-baqh">0.163 (150)</td>
+    <td class="tg-baqh">16.82 (150)</td>
+  </tr>
+  <tr>
+    <td class="tg-amwm">Generated chain</td>
+    <td class="tg-amwm">0.056 (200)</td>
+    <td class="tg-amwm">7.47 (200)</td>
+    <td class="tg-amwm">0.118 (10)</td>
+    <td class="tg-amwm">11.49 (10)</td>
+  </tr>
+</tbody>
+</table>
 
 Table 2. Comparison of the FEDOT-based time series forecasting algorithm and the AutoTS library. Averaged metrics for all variants of moving window sizes and algorithm launches.
 
-|     Algorithm                |     Daily data    |              |     Hourly data                  ||
-|------------------------------|-------------------|--------------|--------------------|--------------|
-|                              |     MAE           |     MAPE     |     MAE            |     MAPE     |
-|     FEDOT generated chain    |     0.064         |     8.69     |     0.132          |     13.39    |
-|     AutoTS                   |     0.083         |     11.36    |     0.159          |     17.19    |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">   <br>Algorithm   </th>
+    <th class="tg-0pky">   <br>Daily data   </th>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">   <br>Hourly data   </th>
+    <th class="tg-0pky"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"></td>
+    <td class="tg-0pky">   <br>MAE   </td>
+    <td class="tg-0pky">   <br>MAPE   </td>
+    <td class="tg-0pky">   <br>MAE   </td>
+    <td class="tg-0pky">   <br>MAPE   </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">   <br>FEDOT generated chain   </td>
+    <td class="tg-0pky">   <br>0.064   </td>
+    <td class="tg-0pky">   <br>8.69   </td>
+    <td class="tg-0pky">   <br>0.132   </td>
+    <td class="tg-0pky">   <br>13.39   </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">   <br>AutoTS   </td>
+    <td class="tg-0pky">   <br>0.083   </td>
+    <td class="tg-0pky">   <br>11.36   </td>
+    <td class="tg-0pky">   <br>0.159   </td>
+    <td class="tg-0pky">   <br>17.19   </td>
+  </tr>
+</tbody>
+</table>
 
 
 As you can see from the table 2, the FEDOT-based algorithms were more accurate. 
