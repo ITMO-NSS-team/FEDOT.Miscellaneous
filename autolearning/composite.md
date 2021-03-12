@@ -3,10 +3,6 @@
 Composite model is a heterogeneous model that consists of several heterogeneous models [1]. The structure of the composite model usually can be represented as a oriented acyclic graph (DAG).
 A special case of this structure is an ensemble of models (can be single or multi-level).
 
-The modelling task can be solved with the composite model if following way:
-
-<img src="img/problem-description.png" width="600"/>
-
 ## Formalisation
 
 The structure of the composite model can be represented as a chain C, which consists of a set of various machine learning models  M = \{ M_1, ..., M_n \}  and a directed link between them  L = \{ L_1, ..., L_k \} .

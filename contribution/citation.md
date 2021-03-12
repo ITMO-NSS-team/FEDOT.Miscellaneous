@@ -2,8 +2,11 @@
 
 If you use Fedot in your studies, please cite one of the papers from the list:
 
-* Kaluzhnaya A.V., Nikitin N.O., Vychuzhanin P., Hvatov A., Boukhanovsky A. Automatic evolutionary learning of composite models with knowledge enrichment //Proceedings of the 2020 Genetic and Evolutionary Computation Conference Companion. – 2020. – С. 43-44.
-* Nikitin N.O., Polonskaia I.S., Vychuzhanin P., Barabanova I.V., Kaluzhnaya A.V. Structural Evolutionary Learning for Composite Classification Models // Procedia Computer Science - 2020, pp. ? (in press) 
+@article{nikitin2020structural,
+title={Structural Evolutionary Learning for Composite Classification Models}, author={Nikitin, Nikolay O and Polonskaia, Iana S and Vychuzhanin, Pavel and Barabanova, Irina V and Kalyuzhnaya, Anna V}, journal={Procedia Computer Science}, volume={178}, pages={414--423}, year={2020}, publisher={Elsevier}}
+
+@inproceedings{kalyuzhnaya2020automatic,
+title={Automatic evolutionary learning of composite models with knowledge enrichment}, author={Kalyuzhnaya, Anna V and Nikitin, Nikolay O and Vychuzhanin, Pavel and Hvatov, Alexander and Boukhanovsky, Alexander}, booktitle={Proceedings of the 2020 Genetic and Evolutionary Computation Conference Companion}, pages={43--44}, year={2020}}
 
 Also, it will be nice to add this text in acknowledgments in possible:
 

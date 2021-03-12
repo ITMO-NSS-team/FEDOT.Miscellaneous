@@ -2,21 +2,25 @@
 
 We cannot deny that there are a lot of well-implemented AutoML frameworks that are quite popular.
 
-There is a brief list of examples of existing solutions:
-* Autosklearn
-* AutoKeras
-* H2O
-* Google Colud HyperTune
-* Microsoft Automated ML
-* TPOT
-* Hyperopt
-* PyBrain
+We tried to summarize the main advantages and disadvantages of the state-of-the-art solutions to the breif table:
 
-We tried to summarize the main advantages and disadvantages of this solutions to the breif table:
-<img src="img/autoMLsolutions.png" alt="drawing" width="700"/>
+|  Framework  | Pipeline | Optimisation algorithm |       Input data       | Ensembling |         Scaling         |  Additional features |                           Source                           |
+|:-----------:|:--------:|:----------------------:|:----------------------:|:----------:|:-----------------------:|:--------------------:|:----------------------------------------------------------:|
+|     TPOT    | Variable |           GP           |        Tabular         |      -     | Multiprocessing, Rapids |    Code generation   |            https://github.com/EpistasisLab/tpot            |
+|     H2O     |   Fixed  |       Grid Search      |     Tabular, Texts     |      +     |          Hybrid         |           -          | https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html |
+| AutoSklearn |   Fixed  |          SMAC          |         Tabular        |      +     |            -            |           -          |           https://github.com/automl/auto-sklearn           |
+|     ATM     |   Fixed  |           BTB          |         Tabular        |      -     |          Hybrid         |           -          |             https://github.com/HDI-Project/ATM             |
+|    FEDOT    | Variable |     GP + GridSearch    |   Tabular, Timeseries  |      +     |            -            |   Composite models   |             https://github.com/nccr-itmo/FEDOT             |
+|  AutoGluon  |   Fixed  |     Fixed Defaults     | Tabular, Images, Texts |      +     |            -            | NAS, AWS integration |            https://github.com/awslabs/autogluon            |
+|     LAMA    |   Fixed  |         Optuna         |         Tabular        |      +     |            -            |       Profiling      |       https://github.com/sberbank-ai-lab/LightAutoML       |
+|     NNI     |   Fixed  |          Bayes         |     Tabular, Images    |      ?     |    Hybrid, Kubernetes   |      NAS, WebUI      |              https://github.com/microsoft/nni              |
 
-However, the modern AutoML is mostly focused on relatively simple tasks of hyperparameters optimization, input data preprocessing, selecting a single model or a set of models [1] (this approach is also referred to as the Combined Algorithm Selection and Hyperparameters optimization - CASH) since the overall learning and meta-learning process is extremely expensive.
 
-## Sources
+## Why we want better AutoML?​
 
-[1] Xin He, Kaiyong Zhao, and Xiaowen Chu. 2019. AutoML: A Survey of the State-of-the-Art.arXiv preprint arXiv:1908.00709(2019).
+1. «Machine learning from scratch» is too hard – a lot of time and resources is required (https://ai.googleblog.com/2020/07/automl-zero-evolving-code-that-learns.html)​ Expert knowledge should be involved (i.e. as initial assumption);​
+2. Pipelines with fixed structure – suitable for simple, routine tasks but not very effective for real problems;​
+3. Raw data should be processed – preprocessing is not well-supported by modern AutoML;​
+4. Modelling for multimodal data (i.e. table + images + time series + text) is not well-automated now for common tasks;​
+5. Specialized for different modelling problems – current solutions are mostly over-specialised;​
+6. Modular pipelines – composite structures instead of complex neural networks / End-To-End Learning for better controllability;
