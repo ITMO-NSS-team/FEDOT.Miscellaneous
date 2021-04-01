@@ -13,4 +13,7 @@ The [third case](/FEDOT.Docs/real_cases/oil-chemistry) is the task from the oil 
 
 Also, the minor cases for [robotics](/FEDOT.Docs/real_cases/robotics) and [economics](/FEDOT.Docs/real_cases/economics) are presented.
 
+The [results](/FEDOT.Docs/real_cases/benchmarks) of different benchmarks evaluation are also available/
+
+
 The other cases are under development now.

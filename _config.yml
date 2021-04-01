@@ -22,9 +22,11 @@ description: > # this means to ignore newlines until "baseurl:"
     <div class='main-menu-item'><a href="/FEDOT.Docs/real_cases/main">Real-world cases</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/credit-scoring">Credit scoring</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/metocean-forecasting">Metocean Forecasting</a></div>
-  <div class='menu-item'><a href="/FEDOT.Docs/real_cases/oil-chemistry">Oil chemistry</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/real_cases/oil-chemistry">Oil chemistry</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/robotics">Robotics</a></div>
     <div class='menu-item'><a href="/FEDOT.Docs/real_cases/economics">Economics</a></div>
+    <div class='menu-item'><a href="/FEDOT.Docs/real_cases/benchmarks">Benchmarks</a></div>
+
 
   </div>
    <div class='menu-group'>
